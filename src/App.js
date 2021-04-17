@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom';
-import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Home from './pages';
 import About from './pages/about';
