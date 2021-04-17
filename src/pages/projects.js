@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 function Projects() {
     return (
         <>
-            
+
 
         </>
     );

@@ -3,5 +3,35 @@
 @tailwind utilities;
 
 
-
+.body-content {
+    @apply leading-loose tracking-wider;
+}
   
+.body-container{
+    @apply font-light text-lg sm:text-xl md:text-2xl lg:text-3xl  mt-14 mx-10 sm:mt-24 sm:mx-20 md:mx-24 lg:mx-28;
+}
+
+.pulse-blue{
+    @apply animate-pulse hover:text-blue-500;
+}
+
+.pulse-green{
+    @apply animate-pulse hover:text-green-500;
+}
+
+.pulse-pink{
+    @apply animate-pulse hover:text-pink-500;
+}
+
+.pulse-purple{
+    @apply animate-pulse hover:text-purple-500;
+}
+
+.pulse-yellow{
+    @apply animate-pulse hover:text-yellow-500;
+}
+
+.action-btn{
+    @apply py-6 px-6 rounded-full text-3xl hover:text-blue-400  transition duration-300 ease-in-out
+    mb-10;
+}
