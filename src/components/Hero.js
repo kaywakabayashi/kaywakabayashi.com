@@ -6,15 +6,15 @@ function Hero() {
         <>
         <div>
             <div className="h-screen flex flex-col items-center ">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mt-20 mx-36 ">
+                    {/* <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mt-20 mx-36 ">
                         KATSUYA WAKABAYASHI
-                    </h1>
+                    </h1> */}
                     <div className="font-light text-lg sm:text-xl md:text-2xl lg:text-3xl  mt-14 mx-10 sm:mt-24 sm:mx-20 md:mx-24 lg:mx-28 ">
-                        <p className="leading-relaxed tracking-widest">
+                        <p className="leading-loose tracking-wider">
                         <p className="mb-10">Hello there,</p>
                         My name is 
-                        <Link to="/about" className="animate-pulse hover:text-blue-500"> Katsuya. </Link>
-                        I
+                        <Link to="/about" className="animate-pulse hover:text-blue-500"> Katsuya Wakabayashi. </Link>
+                        <br />I
                         <a className="animate-pulse hover:text-green-300"href="https://github.com/katsuyaw"> code</a>
                         , write, and 
                         <Link to="/projects" className="animate-pulse hover:text-yellow-500"> create new value</Link>
@@ -24,7 +24,7 @@ function Hero() {
                         looking for <a className="animate-pulse hover:text-pink-300"href="https://linkedin.com/in/kats"> internships</a>. <br/>Looking forward to hearing from you.</p>
                         <p className="leading-relaxed tracking-wide"><br />
                             <span>Send from my </span>
-                            <Link to="/contact" className="animate-pulse hover:text-purple-500">iPhone</Link>
+                            <a className="animate-pulse hover:text-purple-500" href="tel:334-454-3210">iPhone</a>
                         </p>
                         <div className="absolute bottom-0 right-4 ">
                             <div className="inline-block">
