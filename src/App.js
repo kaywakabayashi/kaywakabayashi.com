@@ -6,7 +6,8 @@ import About from './pages/about';
 import Projects from './pages/projects';
 import Dropdown from './components/Dropdown';
 import Navbar from './components/Navbar';
-
+import { ThemeProvider } from "style-componenets";
+import { lightTheme, darkTheme } from "./themes.js";
 
 
 function App() {
@@ -29,15 +30,23 @@ function App() {
     }
   })
 
+  const [theme, setTheme] = useState("light")
+
+  const themeToggler = () => {
+    theme === 'light' ? setTheme("dark") : setTheme("light")
+  };
+
   return (
     <>
-      <Navbar toggle={toggle} />
-      <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
-      </Switch>
+      <ThemeProvider theme={theme === "light" ? "" : ""}>
+        <Navbar toggle={toggle} />
+        <Dropdown isOpen={isOpen} toggle={toggle} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/projects" component={Projects} />
+        </Switch>
+      </ThemeProvider>
     </>
   );
 }

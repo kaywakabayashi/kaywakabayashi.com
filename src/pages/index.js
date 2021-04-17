@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
             <div>
-                <div className="h-screen flex flex-col items-center ">
+                <div className="content-container">
                     <div className="body-container">
                         <p className="body-content">
                             <p className="mb-10">Hello there,</p>
@@ -17,7 +17,7 @@ function Home() {
                             <Link to="/projects" className="pulse-yellow"> create new value</Link>.
                             <br />I am currently a CS major college student in LA and
                             looking for <a className="pulse-pink" href="https://linkedin.com/in/kats"> internships</a>. <br />
-                            Looking forward to hearing from you.</p>
+                            Looking forward to working with you.</p>
                         <p className="leading-relaxed tracking-wide"><br />
                             <span>Sent from my </span>
                             <a className="pulse-purple" href="tel:334-454-3210">iPhone</a>
