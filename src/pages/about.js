@@ -13,7 +13,7 @@ function About() {
 
                 <br />
 
-                I enjoy designing. <br />
+                I also enjoy designing. <br />
                 I believe in the power of minimalism. Making a good
                 elaborate design is difficult but making it simple
                 is much more difficult. <br />
