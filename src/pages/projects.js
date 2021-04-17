@@ -6,7 +6,7 @@ function Projects() {
             <div className="content-container">
                 <div className="body-container">
                     <div className="body-content">
-                        Projects
+                        
                     </div>
                 </div>
             </div>

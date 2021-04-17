@@ -6,8 +6,8 @@ import About from './pages/about';
 import Projects from './pages/projects';
 import Dropdown from './components/Dropdown';
 import Navbar from './components/Navbar';
-import { ThemeProvider } from "style-componenets";
-import { lightTheme, darkTheme } from "./themes.js";
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles, GlobalStyle } from "./themes.js";
 
 
 function App() {
@@ -30,6 +30,10 @@ function App() {
     }
   })
 
+  const StyledApp = styled.div`
+    color: ${(props) => props.theme.fontColor};
+  `
+
   const [theme, setTheme] = useState("light")
 
   const themeToggler = () => {
@@ -38,14 +42,19 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme === "light" ? "" : ""}>
-        <Navbar toggle={toggle} />
-        <Dropdown isOpen={isOpen} toggle={toggle} />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/projects" component={Projects} />
-        </Switch>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <StyledApp>
+          <GlobalStyles />
+
+
+          <Navbar toggle={toggle} />
+          <Dropdown isOpen={isOpen} toggle={toggle} toggle={themeToggler} />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
+          </Switch>
+        </StyledApp>
       </ThemeProvider>
     </>
   );
