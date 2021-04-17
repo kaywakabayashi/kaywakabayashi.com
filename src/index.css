@@ -3,12 +3,16 @@
 @tailwind utilities;
 
 
-.body-content {
-    @apply leading-loose tracking-wider;
+.content-container {
+    @apply h-screen flex flex-col items-center;
 }
-  
+
 .body-container {
     @apply font-light text-lg sm:text-xl md:text-2xl lg:text-3xl  mt-14 mx-10 sm:mt-24 sm:mx-20 md:mx-24 lg:mx-28;
+}
+
+.body-content {
+    @apply leading-loose tracking-wider;
 }
 
 .pulse-blue {
@@ -36,6 +40,3 @@
     mb-10;
 }
 
-.content-container {
-    @apply h-screen flex flex-col items-center;
-}
