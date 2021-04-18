@@ -39,7 +39,7 @@ function Projects() {
                     <div className="font-thin text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:transform sm:rotate-90 transition duration-500 ease-in-out" >[IN PROGRESS]</div>
                 </div>
                 <div className="text-center text-sm ">
-                    <a className="text-blue-500" href="https://githut.com/smc-tech-telk/lets-trade">GitHub</a>
+                    <a className="text-blue-500" href="https://github.com/smc-tech-telk/lets-trade">GitHub</a>
                 </div>
                 <p className="mt-12 text-center text-base mx-8 leading-loose">Virtual stock trading game project. Implemented in C++.</p>
 
