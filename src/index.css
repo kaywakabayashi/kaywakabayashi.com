@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body {
+    font-family: "Helvetica Neue", system-ui;
+  }
+
 .content-container {
     @apply h-screen flex flex-col items-center;
 }
