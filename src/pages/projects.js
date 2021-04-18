@@ -24,7 +24,7 @@ function Projects() {
                     <span className="" > / </span>
                     <a className="text-blue-500" href="https://www.amazon.com/DROP-Explicit-Young-Wolf/dp/B087QN7PQ5">Amazon</a>
                 </div>
-                <p className="mt-12 text-center text-base mx-8 leading-loose">Music production project, worked with a musician and videographers and led the entire project. Music video shot in LA. Songs are available on streaming services.</p>
+                <p className="mt-12 text-center text-base mx-8 leading-loose">Music production project, worked with a musician and videographers and led the entire project. <br />Music video shot in LA. Songs are available on streaming services.</p>
 
             </div>
 
