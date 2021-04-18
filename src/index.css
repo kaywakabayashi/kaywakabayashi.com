@@ -36,8 +36,8 @@
 }
 
 .action-btn {
-    @apply py-6 px-16 rounded-full text-3xl hover:text-blue-400  transition duration-300 ease-in-out
-    mb-10;
+    @apply rounded-full text-3xl hover:text-blue-400  transition duration-300 ease-in-out
+    ;
 }
 
 .option-btn {
