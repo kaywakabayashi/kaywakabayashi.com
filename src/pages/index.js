@@ -7,7 +7,7 @@ function Home() {
             <div className="h-full grid justify-center">
                 <div className="text-base tracking-wider leading-relax sm:tracking-wider sm:leading-relax mx-10 mt-16 sm:text-xl">
                     <p >Hello there,</p><br />My name is
-                    <Link to="/about" className="pulse-blue"> Katsuya Wakabayashi. </Link><br />
+                    <Link to="/about" className="pulse-blue-no-hover"> Katsuya Wakabayashi. </Link><br />
                     I
                     <a className="pulse-green" href="https://github.com/katsuyaw"> code</a>, write, and
                             <Link to="/projects" className="pulse-yellow"> create new value</Link>.
