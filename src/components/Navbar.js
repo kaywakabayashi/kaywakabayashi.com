@@ -6,9 +6,10 @@ const Navbar = ({ toggle }) => {
 
     return (
         <nav className="flex justify-between items-center h-16  relative font-mono">
-            <div className="px-8 py-8 cursor-pointer" onClick={toggle}>
+            <div className="px-8 py-8 cursor-pointer transition duration-500 ease-in-out" onClick={toggle}>
                 KW
             </div>
+
         </nav>
     )
 }
