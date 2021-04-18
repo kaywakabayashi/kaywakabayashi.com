@@ -22,12 +22,12 @@ function Home() {
                     </p>
                     <div className="flex justify-end mt-0 sm:mt-20">
                         <div className="">
-                            <a href="https://drive.google.com/file/d/1hZVi1QKysHm6gSdVz0uJRsUPZbHabA3n/view?usp=sharing" className="mx-4 px-4 py-4 action-btn" >
+                            <a href="https://drive.google.com/file/d/1hZVi1QKysHm6gSdVz0uJRsUPZbHabA3n/view?usp=sharing" className="ml-8 p-2 action-btn" >
                                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clipRule="evenodd" /></svg>
                             </a>
                         </div>
                         <div className="">
-                            <a className="mx-4 px-4 py-4 action-btn" href="mailto:reply@katsuya.co?subject=Re: [Hi there]">
+                            <a className="mx-4 p-2 action-btn" href="mailto:reply@katsuya.co?subject=Re: [Hi there]">
                                 <div><svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" /></svg></div>
                             </a>
                         </div>
