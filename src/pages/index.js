@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
             <div className="h-full grid justify-center">
-                <div className="text-base tracking-wider leading-relax sm:tracking-wider sm:leading-relax mx-10 mt-3 sm:mt-8 sm:text-xl">
+                <div className="text-base tracking-wider leading-relax sm:tracking-wider sm:leading-relax mx-10 mt-16 sm:text-xl">
                     <p >Hello there,</p><br />My name is
                     <Link to="/about" className="pulse-blue"> Katsuya Wakabayashi. </Link><br />
                     I
