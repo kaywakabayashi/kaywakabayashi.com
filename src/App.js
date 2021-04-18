@@ -48,7 +48,7 @@ function App() {
 
 
           <Navbar toggle={toggle} />
-          <Dropdown isOpen={isOpen} toggle={toggle} toggle={themeToggler} />
+          <Dropdown isOpen={isOpen} toggle={toggle} themeToggler={themeToggler} />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />

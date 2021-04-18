@@ -40,3 +40,8 @@
     mb-10;
 }
 
+.option-btn {
+    @apply hover:text-blue-400  transition duration-300 ease-in-out
+    mb-10;
+}
+
