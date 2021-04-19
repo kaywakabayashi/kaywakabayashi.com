@@ -58,6 +58,8 @@ function Projects() {
                 </div>
                 <div className="text-center text-sm ">
                     <a className="text-blue-500" href="https://eternal-card.com">eternal-card.com</a>
+                    <span className="" > / </span>
+                    <a className="text-blue-500" href="https://eternal-card.netlify.app">eternal-card.netlify.app(Beta version)</a>
                 </div>
                 <p className="mt-12 text-center text-base mx-8 leading-loose">NFT(non-fungible token) project. Designed a set of collectable card NFT.</p>
 
