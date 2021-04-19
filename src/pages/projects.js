@@ -79,7 +79,7 @@ function Projects() {
                 <div className="text-center text-sm ">
                     <a className="text-blue-500" href="https://githut.com/therprojects/lets-trade">GitHub</a>
                     <span className="" > / </span>
-                    <a className="text-blue-500" href="https://efficiently.app">efficiently.app</a>
+                    <a className="text-blue-500" href="https://efficiently.netlify.app">efficiently.app</a>
                 </div>
                 <p className="mt-12 text-center text-base mx-8 leading-loose">Multi Platform React Todo App Project. Comming soon.</p>
             </div>
