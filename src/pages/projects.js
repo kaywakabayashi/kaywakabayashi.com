@@ -74,12 +74,13 @@ function Projects() {
                     <div>
                         <div className="items-center"><img src={EfficientlyScreen} /></div>
                     </div>
-                    <div className="font-thin text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:transform sm:rotate-90 transition duration-500 ease-in-out" >[COMMING SOON]</div>
+                    <div className="font-thin text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:transform sm:rotate-90 transition duration-500 ease-in-out" >[COMING SOON]</div>
                 </div>
                 <div className="text-center text-sm ">
                     <a className="text-blue-500" href="https://githut.com/therprojects/lets-trade">GitHub</a>
                     <span className="" > / </span>
-                    <a className="text-blue-500" href="https://efficiently.netlify.app">efficiently.app</a>
+                    <a className="text-blue-500" href="https://efficiently.netlify.app">efficiently.app(Beta)</a>
+
                 </div>
                 <p className="mt-12 text-center text-base mx-8 leading-loose">Multi Platform React Todo App Project. Comming soon.</p>
             </div>
