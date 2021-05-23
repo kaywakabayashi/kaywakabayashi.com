@@ -9,10 +9,10 @@ function Home() {
                     <p >Hello there,</p><br />My name is
                     <Link to="/about" className="pulse-blue-no-hover"> Katsuya Wakabayashi. </Link><br />
                     I
-                    <a className="pulse-green" href="https://github.com/katsuyaw"> code</a>, write, and
-                            <Link to="/projects" className="pulse-yellow"> create new value</Link>.
+                    <a className="pulse-green-no-hover" href="https://github.com/katsuyaw"> code</a>, write, and
+                            <Link to="/projects" className="pulse-yellow-no-hover"> create new value</Link>.
                             <br />I am currently a CS major college student in LA and
-                            looking for <a className="pulse-pink" href="https://linkedin.com/in/kats"> internships</a>. <br />
+                            looking for <a className="pulse-pink-no-hover" href="https://linkedin.com/in/kats"> internships</a>. <br />
                             Looking forward to working with you.
 
 

@@ -31,16 +31,32 @@ body {
     @apply animate-pulse hover:text-green-500;
 }
 
+.pulse-green-no-hover {
+    @apply animate-pulse text-green-500;
+}
+
 .pulse-pink {
     @apply animate-pulse hover:text-pink-500;
+}
+
+.pulse-pink-no-hover {
+    @apply animate-pulse text-pink-500;
 }
 
 .pulse-purple {
     @apply animate-pulse hover:text-purple-500;
 }
 
+.pulse-pink-no-hover {
+    @apply animate-pulse text-purple-500;
+}
+
 .pulse-yellow {
     @apply animate-pulse hover:text-yellow-500;
+}
+
+.pulse-yellow-no-hover {
+    @apply animate-pulse text-yellow-500;
 }
 
 .action-btn {
