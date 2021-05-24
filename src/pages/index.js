@@ -7,16 +7,17 @@ function Home() {
             <div className="h-full grid justify-center">
                 <div className="text-base tracking-wider leading-relax sm:tracking-wider sm:leading-relax mx-10 mt-16 sm:text-xl">
                     <p >Hello there,</p><br />My name is
-                    <Link to="/about" className="pulse-blue-no-hover"> Katsuya Wakabayashi. </Link><br />
+                    <Link to="/about" className="pulse-blue-no-hover underline"> Katsuya Wakabayashi. </Link><br />
                     I
-                    <a className="pulse-green-no-hover" href="https://github.com/katsuyaw"> code</a>, write, and
-                            <Link to="/projects" className="pulse-yellow-no-hover"> create new value</Link>.
+                    <a className="pulse-green-no-hover underline" href="https://github.com/katsuyaw"> code</a>, write, and
+                            <Link to="/projects" className="pulse-yellow-no-hove underline"> create new value</Link>.
                             <br />I am currently a CS major college student in LA and
-                            looking for <a className="pulse-pink-no-hover" href="https://linkedin.com/in/kats"> internships</a>. <br />
+
+                            looking for <a className="pulse-pink-no-hover underline" href="https://linkedin.com/in/kats"> internships</a>. <br />
                             Looking forward to working with you.
 
 
-                            <p className="leading-relaxed tracking-wide"><br />
+                            <p className="leading-relaxed tracking-wide underline"><br />
                         <span>Sent from my </span>
                         <a className="pulse-purple" href="tel:334-454-3210">iPhone</a>
                     </p>
