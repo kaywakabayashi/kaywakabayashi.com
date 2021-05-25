@@ -15,8 +15,9 @@ function Home() {
                             <Link to="/projects" className="pulse-yellow-no-hover underline">create new value</Link>.
                             <br />I am currently a CS major college student in LA and
 
-                            looking for <a className="pulse-pink-no-hover underline" href="https://linkedin.com/in/kats"> internships</a>. <br />
-                            Looking forward to working with you.
+                            looking for internships. <br />
+                            <span>Feel free to say hi to me on </span><a className="pulse-pink-no-hover underline" href="https://linkedin.com/in/kats">LinkedIn</a><span>. Let's connect!</span>
+                            
 
 
                             <p className="leading-relaxed tracking-wide "><br />
