@@ -2,67 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Helvetica Neue", system-ui;
-}
-
-.content-container {
-  @apply h-screen flex flex-col items-center;
-}
-
-.body-container {
-  @apply font-light text-lg sm:text-xl md:text-2xl lg:text-3xl  mt-14 mx-10 sm:mt-24 sm:mx-20 md:mx-24 lg:mx-28;
-}
-
-.body-content {
-  @apply leading-loose tracking-wider;
-}
-
-.pulse-blue {
-  @apply animate-pulse hover:text-blue-500;
-}
-
-.pulse-blue-no-hover {
-  @apply animate-pulse text-blue-500;
-}
-
-.pulse-green {
-  @apply animate-pulse hover:text-green-500;
-}
-
-.pulse-green-no-hover {
-  @apply animate-pulse text-green-500;
-}
-
-.pulse-pink {
-  @apply animate-pulse hover:text-pink-500;
-}
-
-.pulse-pink-no-hover {
-  @apply animate-pulse text-pink-500;
-}
-
-.pulse-purple {
-  @apply animate-pulse hover:text-purple-500;
-}
-
-.pulse-pink-no-hover {
-  @apply animate-pulse text-purple-500;
-}
-
-.pulse-yellow {
-  @apply animate-pulse hover:text-yellow-500;
-}
-
-.pulse-yellow-no-hover {
-  @apply animate-pulse text-yellow-500;
-}
-
-.action-btn {
-  @apply rounded-full text-3xl hover:text-blue-400  transition duration-300 ease-in-out;
-}
-
-.option-btn {
-  @apply hover:text-blue-400  transition duration-300 ease-in-out
-    mb-10;
+html {
+  @apply font-Monrope;
 }

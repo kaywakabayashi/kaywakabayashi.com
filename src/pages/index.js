@@ -1,81 +1,269 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import styled from "styled-components";
+import Cover from "../img/katsuya.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
-    return (
-        <>
-            <div className="h-full grid justify-center">
-                <div className="text-base tracking-wider leading-relax sm:tracking-wider sm:leading-relax mx-10 mt-16 sm:text-xl">
-                    <p >Hello there,</p><br />
-                    <span>My name is </span>
-                    <Link to="/about" className="pulse-blue-no-hover underline">Katsuya Wakabayashi</Link>.<br />
-                    <span>I </span>
-                    <a className="pulse-green-no-hover underline" href="https://github.com/katsuyaw">code</a>
-                    <span>, write, and </span>
-                            <Link to="/projects" className="pulse-yellow-no-hover underline">create new value</Link>.
-                            <br />I am currently a CS major college student in LA and
+  const Container = styled(motion.div)`
+    background-color: white;
+    height: 100vh;
+  `;
 
-                            looking for internships. <br />
-                            <span>Feel free to say hi to me on </span><a className="pulse-pink-no-hover underline" href="https://linkedin.com/in/kats">LinkedIn</a><span>. Let's connect!</span>
-                            
+  const TitleContainer = styled(motion.div)`
+    padding: 1em 2em 0;
+    border-radius: 25px;
+    background-color: transparent;
+    height: 100%;
+  `;
 
+  const ProjectContainer = styled(motion.div)`
+    background-color: white;
+    height: 100vh;
+  `;
 
-                            <p className="leading-relaxed tracking-wide "><br />
-                        <span>Sent from my </span>
-                        <a className="pulse-purple" href="tel:334-454-3210">iPhone</a>
-                    </p>
-                    <div className="flex justify-end mt-0 sm:mt-20">
-                        <div className="">
-                            <a href="https://drive.google.com/file/d/1hZVi1QKysHm6gSdVz0uJRsUPZbHabA3n/view?usp=sharing" className="ml-8 p-2 action-btn" >
-                                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clipRule="evenodd" /></svg>
-                            </a>
-                        </div>
-                        <div className="">
-                            <a className="mx-4 p-2 action-btn" href="mailto:reply@katsuya.me?subject=Re: [Hi there]">
-                                <div><svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" /></svg></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  const ProjectWrapper = styled(motion.div)`
+    padding: 1em 2em 0;
+    border-radius: 25px;
+    background-color: transparent;
+    height: 100%;
+  `;
 
-            </div>
-            {/* <div>
-                <div className="">
-                    <div className="">
-                        <p className="">
-                            <p className="mb-10">Hello there,</p>
-                            My name is
-                            <Link to="/about" className="pulse-blue"> Katsuya Wakabayashi. </Link><br />
-                            I
-                            <a className="pulse-green" href="https://github.com/katsuyaw"> code</a>
-                            , write, and
-                            <Link to="/projects" className="pulse-yellow"> create new value</Link>.
-                            <br />I am currently a CS major college student in LA and
-                            looking for <a className="pulse-pink" href="https://linkedin.com/in/kats"> internships</a>. <br />
-                            Looking forward to working with you.</p>
-                        <p className="leading-relaxed tracking-wide"><br />
-                            <span>Sent from my </span>
-                            <a className="pulse-purple" href="tel:334-454-3210">iPhone</a>
-                        </p>
-                        <div className="absolute bottom-0">
-                            <div className="inline-block">
-                                <a href="https://drive.google.com/file/d/1hZVi1QKysHm6gSdVz0uJRsUPZbHabA3n/view?usp=sharing" className="action-btn" >
-                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clipRule="evenodd" /></svg>
-                                </a>
-                            </div>
-                            <div className="inline-block">
-                                <a className="action-btn" href="mailto:reply@katsuya.co?subject=Re: [Hi there]">
-                                    <div><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" /></svg></div>
-                                </a>
-                            </div>
-                        </div>
+  const Message = styled(motion.div)`
+    color: black;
+    font-size: 1.9em;
+    @media (min-width: 320px) {
+      font-size: 1.8em;
+    }
+    @media (min-width: 360px) {
+      font-size: 2.5em;
+    }
+    @media (min-width: 481px) {
+      font-size: 2.5em;
+    }
 
-                    </div>
-                </div>
+    @media (min-width: 768px) {
+      font-size: 3.5em;
+    }
+    @media (min-width: 1025px) {
+      font-size: 5em;
+    }
+  `;
 
-            </div> */}
-        </>
-    );
-};
+  const EmailContainer = styled(motion.button)`
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 0.8rem;
+    border-color: black;
+    border-width: 0.2rem;
+    color: white;
+    padding: 0.5rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13rem;
 
-export default Home
+    @media (min-width: 769px) {
+      right: 2.5rem;
+      margin-right: 0;
+    }
+  `;
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+
+  function handleMouse(event) {
+    x.set(event.pageX);
+    y.set(event.pageY);
+  }
+  const email = "hello@katsuya.me";
+  const [copySuccessMessage, setCopySuccessMessage] = useState(email);
+  const [instructions, setInstructions] = useState(email);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopySuccessMessage(email);
+    }, 995000);
+    return () => clearTimeout(timer);
+  }, [copySuccessMessage]);
+
+  function copyEmail() {
+    navigator.clipboard.writeText(email);
+    setCopySuccessMessage("Copied");
+    setInstructions("");
+  }
+
+  function showInstruction() {
+    if (copySuccessMessage) {
+      return;
+    }
+    setInstructions(`click to copy`);
+  }
+
+  function hideInstruction() {
+    setInstructions(`${email}`);
+  }
+
+  return (
+    <>
+      <Container
+        style={{ perspective: 1000 }}
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+        onMouseMove={handleMouse}
+      >
+        <TitleContainer id="top">
+          <Message
+            initial={{ opacity: 0.8 }}
+            animate={{
+              opacity: 0.03,
+              x: 0,
+              y: 5,
+              transition: { duration: 3 },
+            }}
+            whileHover={{ scale: 1 }}
+          >
+            HELLO, I AM
+          </Message>
+          <div>
+            <Message
+              initial={{ opacity: 0.1, x: 0, y: 15 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                y: 5,
+                transition: { duration: 3 },
+                scale: 1.1,
+                originX: 0,
+              }}
+              whileHover={{
+                scale: 1.2,
+                textShadow: "0px 0px 15px rgb(255, 255, 255)",
+                originX: 0,
+              }}
+              transition={{ stiffness: 300 }}
+            >
+              <Link to="/projects">KATSUYA.</Link>
+            </Message>
+          </div>
+
+          <Message
+            initial={{ opacity: 0.8, x: 0, y: 0 }}
+            animate={{
+              opacity: 0.03,
+              x: 0,
+              y: 5,
+              transition: { duration: 3 },
+            }}
+            whileHover={{ scale: 1 }}
+          >
+            I AM A PASSIONATE
+          </Message>
+
+          <Message
+            initial={{ opacity: 0, x: 0, y: 15 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: 5,
+              transition: { duration: 3 },
+              scale: 1.1,
+              originX: 0,
+            }}
+            whileHover={{
+              scale: 1.2,
+              textShadow: "0px 0px 15px rgb(255, 255, 255)",
+              originX: 0,
+            }}
+            transition={{ stiffness: 300 }}
+          >
+            <Link to="/projects">FRONT-END DEVELOPER</Link>
+          </Message>
+
+          <Message
+            initial={{ opacity: 0.8, x: 0, y: 0 }}
+            animate={{
+              opacity: 0.03,
+              x: 0,
+              y: 5,
+              transition: { duration: 3 },
+            }}
+            whileHover={{ scale: 1 }}
+          >
+            AND METICULOUS
+          </Message>
+
+          <Message
+            initial={{ opacity: 0, x: 0, y: 15 }}
+            animate={{
+              x: 0,
+              y: 5,
+              opacity: 1,
+              transition: { duration: 3 },
+              scale: 1.1,
+              originX: 0,
+            }}
+            whileHover={{
+              scale: 1.2,
+              textShadow: "0px 0px 15px rgb(255, 255, 255)",
+            }}
+            transition={{ stiffness: 300 }}
+            whileTap={{
+              scale: 10,
+              transition: { duration: 3 },
+            }}
+
+            //style={{ x, y, rotateX, rotateY, z: 100 }}
+          >
+            <Link to="/">UI/UX DESIGNER.</Link>
+          </Message>
+        </TitleContainer>
+        <EmailContainer
+          onClick={copyEmail}
+          initial={{ opacity: 1 }}
+          whileHover={{
+            backgroundColor: "white",
+            color: "black",
+            opacity: 0.8,
+            scale: 1.1,
+          }}
+        >
+          {copySuccessMessage}
+        </EmailContainer>
+        <ProjectContainer>
+          <ProjectWrapper>
+            <Message
+              initial={{ opacity: 0, x: -1000, y: 0 }}
+              animate={{
+                x: 0,
+                y: 5,
+                opacity: 1,
+                transition: { duration: 3 },
+                scale: 1.1,
+                originX: 0,
+              }}
+            >
+              Work
+            </Message>
+          </ProjectWrapper>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectWrapper>
+            <Message>Contact</Message>
+          </ProjectWrapper>
+        </ProjectContainer>
+      </Container>
+    </>
+  );
+}
+
+export default Home;

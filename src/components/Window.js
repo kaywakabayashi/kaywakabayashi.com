@@ -1,6 +1,6 @@
 import React from "react";
 
-function window() {
+const Window = (props) => {
   return (
     <div>
       <div class="w-1/2 mx-auto">
@@ -22,19 +22,19 @@ function window() {
               id="maxbtn"
             ></div>
             <div class="mx-auto pr-16" id="terminaltitle">
-              <p class="text-center text-sm">katsuya.js</p>
+              <p class="text-center text-sm">katsuya.ai</p>
             </div>
           </div>
           <div
             class="pl-1 pt-1 h-auto  text-green-200 font-mono text-xs bg-black"
             id="console"
           >
-            <p class="pb-1">Last login: </p>
+            <p class="pb-1">Currently under construction... </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default window;
+export default Window;
