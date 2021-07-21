@@ -3,22 +3,29 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import styled from "styled-components";
 import Cover from "../img/katsuya.jpg";
 import { Link } from "react-router-dom";
+import * as Scroll from "react-scroll";
+import {
+  Link as LinkS,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 function Home() {
   const Container = styled(motion.div)`
     background-color: white;
     height: 100vh;
+    scroll-snap-align: start;
   `;
 
-  const TitleContainer = styled(motion.div)`
+  const ContentContainer = styled(motion.div)`
     padding: 1em 2em 0;
     border-radius: 25px;
     background-color: transparent;
-    height: 100%;
-  `;
-
-  const ProjectContainer = styled(motion.div)`
-    background-color: white;
+    scroll-snap-type: x mandatory;
+    overflow-y: scroll;
     height: 100vh;
   `;
 
@@ -109,6 +116,10 @@ function Home() {
     setInstructions(`${email}`);
   }
 
+  const scrollTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <Container
@@ -121,7 +132,7 @@ function Home() {
         }}
         onMouseMove={handleMouse}
       >
-        <TitleContainer id="top">
+        <ContentContainer id="top">
           <Message
             initial={{ opacity: 0.8 }}
             animate={{
@@ -186,7 +197,16 @@ function Home() {
             }}
             transition={{ stiffness: 300 }}
           >
-            <Link to="/projects">FRONT-END DEVELOPER</Link>
+            <LinkS
+              activeClass="active"
+              to="work"
+              spy={true}
+              offset={0}
+              duration={500}
+              smooth={true}
+            >
+              FRONT-END DEVELOPERS
+            </LinkS>
           </Message>
 
           <Message
@@ -224,9 +244,18 @@ function Home() {
 
             //style={{ x, y, rotateX, rotateY, z: 100 }}
           >
-            <Link to="/">UI/UX DESIGNER.</Link>
+            <LinkS
+              activeClass="active"
+              to="contact"
+              spy={true}
+              offset={0}
+              smooth={true}
+              duration={500}
+            >
+              UI/UX DESIGNER.
+            </LinkS>
           </Message>
-        </TitleContainer>
+        </ContentContainer>
         <EmailContainer
           onClick={copyEmail}
           initial={{ opacity: 1 }}
@@ -239,7 +268,7 @@ function Home() {
         >
           {copySuccessMessage}
         </EmailContainer>
-        <ProjectContainer>
+        <ContentContainer id="work">
           <ProjectWrapper>
             <Message
               initial={{ opacity: 0, x: -1000, y: 0 }}
@@ -255,12 +284,12 @@ function Home() {
               Work
             </Message>
           </ProjectWrapper>
-        </ProjectContainer>
-        <ProjectContainer>
+        </ContentContainer>
+        <ContentContainer id="contact">
           <ProjectWrapper>
             <Message>Contact</Message>
           </ProjectWrapper>
-        </ProjectContainer>
+        </ContentContainer>
       </Container>
     </>
   );
