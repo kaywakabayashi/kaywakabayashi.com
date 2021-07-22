@@ -23,10 +23,9 @@ function Home() {
 
   const SectionContainer = styled(motion.div)`
     padding: 1em 2em 0;
-    border-radius: 25px;
     background-color: transparent;
     scroll-snap-type: y mandatory;
-    //overflow-y: scroll;
+    overflow-x: hidden;
     height: 100vh;
   `;
 
@@ -279,11 +278,12 @@ function Home() {
               duration={500}
               smooth={true}
             >
-              FRONT-END DEVELOPERS
+              FRONT-END DEVELOPER
             </LinkS>
           </Message>
 
           <Message
+            drag
             initial={{ opacity: 0.8, x: 0, y: 0 }}
             animate={{
               opacity: 0.03,
@@ -291,7 +291,6 @@ function Home() {
               y: 5,
               transition: { duration: 3 },
             }}
-            whileHover={{ scale: 1 }}
           >
             AND METICULOUS
           </Message>
@@ -309,14 +308,13 @@ function Home() {
             whileHover={{
               scale: 1.2,
               textShadow: "0px 0px 15px rgb(255, 255, 255)",
+              originX: 0,
             }}
             transition={{ stiffness: 300 }}
-            whileTap={{
-              scale: 10,
-              transition: { duration: 3 },
-            }}
-
-            //style={{ x, y, rotateX, rotateY, z: 100 }}
+            // whileTap={{
+            //   scale: 1,
+            //   transition: { duration: 3 },
+            // }}
           >
             <LinkS
               activeClass="active"
