@@ -411,7 +411,7 @@ function Home() {
         <SectionContainer id="me">
           <ContentContainer>
             <SectionTitle>
-              <ScrollIn duration={2} x={-100}>
+              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
                 Me
               </ScrollIn>
             </SectionTitle>
@@ -423,13 +423,13 @@ function Home() {
               <ScrollIn duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
                 <ProfileContainer>
                   <ProfileName>KATSUYA WAKABAYASHI</ProfileName>
-                  <Marquee speed={50}>
+                  <Marquee speed={120}>
                     <p>
                       Love working with creators.
                       <span className="px-5" />
                     </p>
                   </Marquee>
-                  <Marquee speed={100}>
+                  <Marquee speed={120}>
                     <p className="">
                       Skilled in{" "}
                       <span className="font-bold">
@@ -438,7 +438,7 @@ function Home() {
                       etc. <span className="px-5" />
                     </p>
                   </Marquee>
-                  <Marquee speed={100}>
+                  <Marquee speed={120}>
                     <p>
                       Currently studying Computer Science and Linguistics at{" "}
                       <span className="font-bold">UCLA.</span>
