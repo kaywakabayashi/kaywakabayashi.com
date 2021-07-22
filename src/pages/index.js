@@ -475,6 +475,7 @@ function Home() {
 
               <ScrollIn duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
                 <RightContainer>
+                  <ProfileName>HI, I'M KATSUYA WAKABAYASHI</ProfileName>
                   <Marquee speed={120}>
                     <p>
                       Love working with creators.
