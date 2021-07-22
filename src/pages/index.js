@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useAnimation,
+  AnimateSharedLayout,
+} from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Cover from "../img/katsuya.jpg";
 import { Link } from "react-router-dom";
@@ -13,6 +20,9 @@ import {
   scroller,
 } from "react-scroll";
 import Footer from "../components/Footer";
+import Banner from "../components/Banner";
+import "../index.css";
+import Marquee from "react-fast-marquee";
 
 function Home() {
   const Container = styled(motion.div)`
@@ -26,6 +36,7 @@ function Home() {
     background-color: transparent;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
+    overflow-y: hidden;
     height: 100vh;
   `;
 
@@ -93,38 +104,37 @@ function Home() {
       flex-direction: row;
     }
   `;
-  const ProfileName = styled.div`
+  const ProfileName = styled(motion.div)`
     text-align: center;
+    padding: 1rem 0.5rem;
+    font-size: 0.7em;
   `;
 
   const ProfileContainer = styled(motion.div)`
     color: black;
-    font-size: 0.5em;
-    text-align: left;
+    font-size: 2em;
 
     @media (min-width: 320px) {
-      font-size: 1em;
+      font-size: 2em;
     }
-    @media (min-width: 360px) {
-      font-size: 1.3em;
-    }
+
     @media (min-width: 481px) {
-      font-size: 1.3em;
+      font-size: 3.5em;
       padding: 0 5rem;
     }
 
     @media (min-width: 768px) {
-      font-size: 1.7em;
+      font-size: 3.5em;
       text-align: left;
     }
     @media (min-width: 1025px) {
-      font-size: 2em;
+      font-size: 4em;
     }
   `;
 
   const Image = styled(motion.img)`
     object-fit: cover;
-    height: 20rem;
+    height: auto;
     width: auto;
   `;
 
@@ -189,6 +199,32 @@ function Home() {
 
   const scrollTop = () => {
     scroll.scrollToTop();
+  };
+
+  const ScrollIn = ({ children, duration, x, hiddenOpacity, opacity }) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+      if (inView) {
+        controls.start("visible");
+      }
+    }, [controls, inView]);
+
+    return (
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        transition={{ duration: duration }}
+        variants={{
+          visible: { opacity: opacity, scale: 1, x: 0 },
+          hidden: { hiddenOpacity: hiddenOpacity, scale: 1, x: x },
+        }}
+      >
+        {children}
+      </motion.div>
+    );
   };
 
   return (
@@ -342,62 +378,52 @@ function Home() {
         </EmailContainer>
         <SectionContainer id="work">
           <ContentContainer>
-            <SectionTitle
-              initial={{ opacity: 0, x: -1000, y: 0 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                transition: { duration: 6 },
-                scale: 1.1,
-                originX: 0,
-              }}
-            >
-              Work
+            <SectionTitle>
+              <ScrollIn duration={2} x={-100}>
+                Work
+              </ScrollIn>
             </SectionTitle>
-            <Message>
-              <Link to="/projects">PROJECTS</Link>
-            </Message>
           </ContentContainer>
         </SectionContainer>
         <SectionContainer id="me">
           <ContentContainer>
-            <SectionTitle
-              initial={{ opacity: 0, x: -1000, y: 0 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                transition: { duration: 3 },
-                scale: 1.1,
-                originX: 0,
-              }}
-            >
-              Me
+            <SectionTitle>
+              <ScrollIn duration={1} x={-200}>
+                Me
+              </ScrollIn>
             </SectionTitle>
             <RowContainer>
-              <Image src={Cover} />
-              <ProfileContainer className="font-extralight">
-                <ProfileName className="font-semibold">
-                  KATSUYA WAKABAYASHI
-                </ProfileName>
-                <p>
-                  Developer and Designer who have worked with fashion designers
-                  and creators. Developing All-in-one productivity app,
-                  Efficiently App.
-                </p>
-                <p>
-                  Skilled in{" "}
-                  <span className="font-bold">
-                    React.js, React Native, JavaScript, C++, Python
-                  </span>{" "}
-                  etc.
-                </p>
-                <p>
-                  Currently studying Computer Science and Linguistics at{" "}
-                  <span className="font-bold">UCLA</span>
-                </p>
-              </ProfileContainer>
+              <ScrollIn duration={1} x={-400} hiddenOpacity={0.1} opacity={0.7}>
+                <Image src={Cover} />
+              </ScrollIn>
+
+              <ScrollIn duration={1.5} x={900}>
+                <ProfileContainer>
+                  <ProfileName>KATSUYA WAKABAYASHI</ProfileName>
+                  <Marquee speed={100}>
+                    <p>
+                      Love working with creators.
+                      <span className="px-5" />
+                    </p>
+                  </Marquee>
+                  <Marquee speed={200}>
+                    <p className="">
+                      Skilled in{" "}
+                      <span className="font-bold">
+                        React.js, React Native, JavaScript, C++, Python
+                      </span>{" "}
+                      etc. <span className="px-5" />
+                    </p>
+                  </Marquee>
+                  <Marquee speed={300}>
+                    <p>
+                      Currently studying Computer Science and Linguistics at{" "}
+                      <span className="font-bold">UCLA.</span>
+                      <span className="px-5" />
+                    </p>
+                  </Marquee>
+                </ProfileContainer>
+              </ScrollIn>
             </RowContainer>
 
             <p className="font-semibold"></p>
@@ -405,19 +431,10 @@ function Home() {
         </SectionContainer>
         <SectionContainer id="contact">
           <ContentContainer>
-            <Message
-              initial={{ opacity: 1, x: -1000, y: 0 }}
-              transition={{ delay: 3 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 0.2,
-                transition: { duration: 3 },
-                scale: 1.1,
-                originX: 0,
-              }}
-            >
-              WAYS TO SAY HI
+            <Message>
+              <ScrollIn duration={3} x={-200} hiddenOpacity={1} opacity={0.2}>
+                WAYS TO SAY HI
+              </ScrollIn>
             </Message>
             <Message
               initial={{ opacity: 0, x: 0, y: 15 }}
