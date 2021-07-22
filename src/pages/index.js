@@ -9,6 +9,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Cover from "../img/katsuya.jpg";
+import Work1 from "../img/lawistudios.png";
 import { Link } from "react-router-dom";
 import * as Scroll from "react-scroll";
 import {
@@ -28,16 +29,19 @@ function Home() {
   const Container = styled(motion.div)`
     background-color: white;
     height: 100vh;
+    width: 100%;
     scroll-snap-align: start;
   `;
 
   const MainContainer = styled(motion.div)`
-    padding: 1em 2em 0;
     background-color: transparent;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
     overflow-y: hidden;
     height: 100vh;
+    @media (min-width: 768px) {
+      padding: 1em 0;
+    }
   `;
 
   const SectionContainer = styled(motion.div)`
@@ -50,10 +54,12 @@ function Home() {
   `;
 
   const ContentContainer = styled(motion.div)`
-    padding: 1em 0;
     border-radius: 25px;
     background-color: transparent;
     height: 100%;
+    @media (min-width: 768px) {
+      padding: 1em 0;
+    }
   `;
 
   const Message = styled(motion.div)`
@@ -94,7 +100,7 @@ function Home() {
       font-size: 3.5em;
     }
     @media (min-width: 1025px) {
-      font-size: 5em;
+      font-size: 4em;
     }
   `;
 
@@ -104,22 +110,24 @@ function Home() {
     justify-content: center;
     align-items: center;
 
-    @media (min-width: 481px) {
-    }
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
     @media (min-width: 1025px) {
-      flex-direction: row;
+      //flex-direction: row;
     }
   `;
   const ProfileName = styled(motion.div)`
     text-align: center;
-    padding: 1rem 0.5rem;
-    font-size: 0.7em;
+    font-size: 0.5em;
   `;
 
-  const ProfileContainer = styled(motion.div)`
+  const LeftContainer = styled(motion.div)`
+    margin: auto;
+
+    @media (min-width: 1025px) {
+      width: 20rem;
+    }
+  `;
+
+  const RightContainer = styled(motion.div)`
     color: black;
     font-size: 1em;
 
@@ -129,23 +137,28 @@ function Home() {
 
     @media (min-width: 481px) {
       font-size: 3.5em;
-      padding: 0 5rem;
     }
 
     @media (min-width: 768px) {
       font-size: 3.5em;
-      text-align: left;
     }
     @media (min-width: 1025px) {
-      font-size: 4em;
+      font-size: 5em;
     }
   `;
 
   const Image = styled(motion.img)`
     object-fit: cover;
-    height: auto;
+    height: 15rem;
     width: auto;
+    margin: auto;
   `;
+  // const WorkImg1 = styled(motion.img)`
+  //   position: absolute;
+  //   height: 15rem;
+  //   width: auto;
+  //   bottom: -10;
+  // `;
 
   const EmailContainer = styled(motion.button)`
     display: fixed;
@@ -214,9 +227,11 @@ function Home() {
     children,
     duration,
     x,
+    y,
     hiddenOpacity,
     opacity,
     hiddenScale,
+    hover,
   }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
@@ -234,9 +249,10 @@ function Home() {
         initial="hidden"
         transition={{ duration: duration }}
         variants={{
-          visible: { opacity: opacity, scale: 1, x: 0 },
-          hidden: { opacity: hiddenOpacity, scale: hiddenScale, x: x },
+          visible: { opacity: opacity, scale: 1, x: 0, y: 0, originX: 0 },
+          hidden: { opacity: hiddenOpacity, scale: hiddenScale, x: x, y: y },
         }}
+        whileHover={{ scale: hover, transition: { duration: 0.5 } }}
       >
         {children}
       </motion.div>
@@ -252,6 +268,7 @@ function Home() {
           right: 0,
           bottom: 0,
         }}
+        id="container"
       >
         <SectionContainer>
           <MainContainer id="top">
@@ -405,23 +422,59 @@ function Home() {
               <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
                 Work
               </ScrollIn>
+              <ScrollIn
+                hover={1.1}
+                y={15}
+                duration={1}
+                hiddenOpacity={0.5}
+                opacity={1}
+              >
+                <a href="https://lawistudios.com">LAWI STUDIOS/ WEB DESIGNER</a>
+              </ScrollIn>
+              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
+                PROJECTS
+              </ScrollIn>
+              <ScrollIn
+                hover={1.1}
+                y={15}
+                duration={2}
+                hiddenOpacity={0.5}
+                opacity={1}
+              >
+                <a href="https://efficiently.app">EFFICIENTLY APP</a>
+              </ScrollIn>
+              <ScrollIn
+                hover={1.1}
+                y={15}
+                duration={3}
+                hiddenOpacity={0.5}
+                opacity={1}
+              >
+                <a href="https://github.com/smc-tech-talk/Lets-Trade">
+                  LET'S TRADE
+                </a>
+              </ScrollIn>
+
+              {/* <WorkImg1 src={Work1}></WorkImg1> */}
             </SectionTitle>
           </ContentContainer>
         </SectionContainer>
         <SectionContainer id="me">
           <ContentContainer>
             <SectionTitle>
-              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
+              <ScrollIn duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
                 Me
               </ScrollIn>
             </SectionTitle>
             <RowContainer>
               <ScrollIn duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
-                <Image src={Cover} />
+                <LeftContainer>
+                  <Image src={Cover} />
+                </LeftContainer>
               </ScrollIn>
 
               <ScrollIn duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
-                <ProfileContainer>
+                <RightContainer>
                   <ProfileName>KATSUYA WAKABAYASHI</ProfileName>
                   <Marquee speed={120}>
                     <p>
@@ -440,12 +493,12 @@ function Home() {
                   </Marquee>
                   <Marquee speed={120}>
                     <p>
-                      Currently studying Computer Science and Linguistics at{" "}
+                      Currently studying at{" "}
                       <span className="font-bold">UCLA.</span>
                       <span className="px-5" />
                     </p>
                   </Marquee>
-                </ProfileContainer>
+                </RightContainer>
               </ScrollIn>
             </RowContainer>
 
@@ -459,25 +512,16 @@ function Home() {
                 WAYS TO SAY HI
               </ScrollIn>
             </Message>
-            <Message
-              initial={{ opacity: 0, x: 0, y: 15 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                scale: 1.1,
-                originX: 0,
-              }}
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 15px rgb(255, 255, 255)",
-              }}
-              transition={{ stiffness: 300 }}
-              whileTap={{
-                scale: 1.2,
-              }}
-            >
-              <a href="mailto: hello@katsuya.me">EMAIL ME</a>
+            <Message>
+              <ScrollIn
+                opacity={0.7}
+                duration={5}
+                hiddenOpacity={0.3}
+                hiddenScale={1.3}
+                hover={1.2}
+              >
+                <a href="mailto: hello@katsuya.me">EMAIL ME</a>
+              </ScrollIn>
             </Message>
             <Message
               initial={{ opacity: 0, x: 0, y: 15 }}
