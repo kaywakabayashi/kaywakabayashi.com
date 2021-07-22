@@ -31,6 +31,15 @@ function Home() {
     scroll-snap-align: start;
   `;
 
+  const MainContainer = styled(motion.div)`
+    padding: 1em 2em 0;
+    background-color: transparent;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+  `;
+
   const SectionContainer = styled(motion.div)`
     padding: 1em 2em 0;
     background-color: transparent;
@@ -49,14 +58,14 @@ function Home() {
 
   const Message = styled(motion.div)`
     color: black;
-    font-size: 1.9em;
+    font-size: 1.5em;
     @media (min-width: 320px) {
-      font-size: 1.8em;
+      font-size: 1.5em;
     }
     @media (min-width: 360px) {
-      font-size: 2.5em;
+      font-size: 2em;
     }
-    @media (min-width: 481px) {
+    @media (min-width: 376px) {
       font-size: 2.5em;
     }
 
@@ -112,9 +121,9 @@ function Home() {
 
   const ProfileContainer = styled(motion.div)`
     color: black;
-    font-size: 2em;
+    font-size: 1em;
 
-    @media (min-width: 320px) {
+    @media (min-width: 321px) {
       font-size: 2em;
     }
 
@@ -139,7 +148,7 @@ function Home() {
   `;
 
   const EmailContainer = styled(motion.button)`
-    display: flex;
+    display: fixed;
     justify-content: center;
     background-color: black;
     border-radius: 0.8rem;
@@ -201,7 +210,14 @@ function Home() {
     scroll.scrollToTop();
   };
 
-  const ScrollIn = ({ children, duration, x, hiddenOpacity, opacity }) => {
+  const ScrollIn = ({
+    children,
+    duration,
+    x,
+    hiddenOpacity,
+    opacity,
+    hiddenScale,
+  }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
@@ -219,7 +235,7 @@ function Home() {
         transition={{ duration: duration }}
         variants={{
           visible: { opacity: opacity, scale: 1, x: 0 },
-          hidden: { hiddenOpacity: hiddenOpacity, scale: 1, x: x },
+          hidden: { opacity: hiddenOpacity, scale: hiddenScale, x: x },
         }}
       >
         {children}
@@ -230,31 +246,72 @@ function Home() {
   return (
     <>
       <Container
-        style={{ perspective: 1000 }}
         dragConstraints={{
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
         }}
-        onMouseMove={handleMouse}
       >
-        <SectionContainer id="top">
-          <Message
-            initial={{ opacity: 0.8 }}
-            animate={{
-              opacity: 0.03,
-              x: 0,
-              y: 5,
-              transition: { duration: 3 },
-            }}
-            whileHover={{ scale: 1 }}
-          >
-            HELLO, I AM
-          </Message>
-          <div>
+        <SectionContainer>
+          <MainContainer id="top">
             <Message
-              initial={{ opacity: 0.1, x: 0, y: 15 }}
+              initial={{ opacity: 0.8 }}
+              animate={{
+                opacity: 0.03,
+                x: 0,
+                y: 5,
+                transition: { duration: 3 },
+              }}
+              whileHover={{ scale: 1 }}
+            >
+              HELLO, I AM
+            </Message>
+            <div>
+              <Message
+                initial={{ opacity: 0.1, x: 0, y: 15 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  y: 5,
+                  transition: { duration: 3 },
+                  scale: 1.1,
+                  originX: 0,
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  textShadow: "0px 0px 15px rgb(255, 255, 255)",
+                  originX: 0,
+                }}
+                transition={{ stiffness: 300 }}
+              >
+                <LinkS
+                  to="me"
+                  spy={true}
+                  offset={0}
+                  duration={500}
+                  smooth={true}
+                >
+                  KATSUYA.
+                </LinkS>
+              </Message>
+            </div>
+
+            <Message
+              initial={{ opacity: 0.8, x: 0, y: 0 }}
+              animate={{
+                opacity: 0.03,
+                x: 0,
+                y: 5,
+                transition: { duration: 3 },
+              }}
+              whileHover={{ scale: 1 }}
+            >
+              I AM A PASSIONATE
+            </Message>
+
+            <Message
+              initial={{ opacity: 0, x: 0, y: 15 }}
               animate={{
                 opacity: 1,
                 x: 0,
@@ -270,100 +327,66 @@ function Home() {
               }}
               transition={{ stiffness: 300 }}
             >
-              <LinkS to="me" spy={true} offset={0} duration={500} smooth={true}>
-                KATSUYA.
+              <LinkS
+                activeClass="active"
+                to="work"
+                spy={true}
+                offset={0}
+                duration={500}
+                smooth={true}
+              >
+                FRONT-END DEVELOPER
               </LinkS>
             </Message>
-          </div>
 
-          <Message
-            initial={{ opacity: 0.8, x: 0, y: 0 }}
-            animate={{
-              opacity: 0.03,
-              x: 0,
-              y: 5,
-              transition: { duration: 3 },
-            }}
-            whileHover={{ scale: 1 }}
-          >
-            I AM A PASSIONATE
-          </Message>
-
-          <Message
-            initial={{ opacity: 0, x: 0, y: 15 }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              y: 5,
-              transition: { duration: 3 },
-              scale: 1.1,
-              originX: 0,
-            }}
-            whileHover={{
-              scale: 1.2,
-              textShadow: "0px 0px 15px rgb(255, 255, 255)",
-              originX: 0,
-            }}
-            transition={{ stiffness: 300 }}
-          >
-            <LinkS
-              activeClass="active"
-              to="work"
-              spy={true}
-              offset={0}
-              duration={500}
-              smooth={true}
+            <Message
+              drag
+              initial={{ opacity: 0.8, x: 0, y: 0 }}
+              animate={{
+                opacity: 0.03,
+                x: 0,
+                y: 5,
+                transition: { duration: 3 },
+              }}
             >
-              FRONT-END DEVELOPER
-            </LinkS>
-          </Message>
+              AND METICULOUS
+            </Message>
 
-          <Message
-            drag
-            initial={{ opacity: 0.8, x: 0, y: 0 }}
-            animate={{
-              opacity: 0.03,
-              x: 0,
-              y: 5,
-              transition: { duration: 3 },
-            }}
-          >
-            AND METICULOUS
-          </Message>
-
-          <Message
-            initial={{ opacity: 0, x: 0, y: 15 }}
-            animate={{
-              x: 0,
-              y: 5,
-              opacity: 1,
-              transition: { duration: 3 },
-              scale: 1.1,
-              originX: 0,
-            }}
-            whileHover={{
-              scale: 1.2,
-              textShadow: "0px 0px 15px rgb(255, 255, 255)",
-              originX: 0,
-            }}
-            transition={{ stiffness: 300 }}
-            // whileTap={{
-            //   scale: 1,
-            //   transition: { duration: 3 },
-            // }}
-          >
-            <LinkS
-              activeClass="active"
-              to="contact"
-              spy={true}
-              offset={0}
-              smooth={true}
-              duration={500}
+            <Message
+              initial={{ opacity: 0, x: 0, y: 15 }}
+              animate={{
+                x: 0,
+                y: 5,
+                opacity: 1,
+                transition: { duration: 3 },
+                scale: 1.1,
+                originX: 0,
+              }}
+              whileHover={{
+                scale: 1.2,
+                textShadow: "0px 0px 15px rgb(255, 255, 255)",
+                originX: 0,
+              }}
+              transition={{ stiffness: 300 }}
+              // whileTap={{
+              //   scale: 1,
+              //   transition: { duration: 3 },
+              // }}
             >
-              UI/UX DESIGNER.
-            </LinkS>
-          </Message>
+              <LinkS
+                activeClass="active"
+                to="contact"
+                spy={true}
+                offset={0}
+                smooth={true}
+                duration={500}
+              >
+                UI/UX DESIGNER.
+              </LinkS>
+            </Message>
+          </MainContainer>
         </SectionContainer>
+
         <EmailContainer
           onClick={copyEmail}
           initial={{ opacity: 1 }}
@@ -379,7 +402,7 @@ function Home() {
         <SectionContainer id="work">
           <ContentContainer>
             <SectionTitle>
-              <ScrollIn duration={2} x={-100}>
+              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
                 Work
               </ScrollIn>
             </SectionTitle>
@@ -388,25 +411,25 @@ function Home() {
         <SectionContainer id="me">
           <ContentContainer>
             <SectionTitle>
-              <ScrollIn duration={1} x={-200}>
+              <ScrollIn duration={2} x={-100}>
                 Me
               </ScrollIn>
             </SectionTitle>
             <RowContainer>
-              <ScrollIn duration={1} x={-400} hiddenOpacity={0.1} opacity={0.7}>
+              <ScrollIn duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
                 <Image src={Cover} />
               </ScrollIn>
 
-              <ScrollIn duration={1.5} x={900}>
+              <ScrollIn duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
                 <ProfileContainer>
                   <ProfileName>KATSUYA WAKABAYASHI</ProfileName>
-                  <Marquee speed={100}>
+                  <Marquee speed={50}>
                     <p>
                       Love working with creators.
                       <span className="px-5" />
                     </p>
                   </Marquee>
-                  <Marquee speed={200}>
+                  <Marquee speed={100}>
                     <p className="">
                       Skilled in{" "}
                       <span className="font-bold">
@@ -415,7 +438,7 @@ function Home() {
                       etc. <span className="px-5" />
                     </p>
                   </Marquee>
-                  <Marquee speed={300}>
+                  <Marquee speed={100}>
                     <p>
                       Currently studying Computer Science and Linguistics at{" "}
                       <span className="font-bold">UCLA.</span>
@@ -432,7 +455,7 @@ function Home() {
         <SectionContainer id="contact">
           <ContentContainer>
             <Message>
-              <ScrollIn duration={3} x={-200} hiddenOpacity={1} opacity={0.2}>
+              <ScrollIn duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
                 WAYS TO SAY HI
               </ScrollIn>
             </Message>
