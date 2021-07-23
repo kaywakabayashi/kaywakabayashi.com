@@ -1,8 +1,6 @@
 import React from "react";
 import { ContactWrapper, Button } from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
-import "../index.css";
-
 import { contactMotion } from "../styles/motions";
 
 const Nav = () => {

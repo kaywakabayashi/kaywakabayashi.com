@@ -1,25 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import {
-  Container,
-  NavContainer,
-  MainContainer,
-  SectionContainer,
-  Message,
-  Button,
-  SectionTitle,
-  RowContainer,
-  ProfileName,
-  LeftContainer,
-  RightContainer,
-  Image,
-} from "../styles/styles";
-import Cover from "../img/katsuya.jpg";
-import "../index.css";
-import Marquee from "react-fast-marquee";
-import Hero from "../components/Hero";
-import Nav from "../components/Nav";
+import React from "react";
+import { Message, Button } from "../styles/styles";
 import ScrollInMessage from "../styles/motions";
 
 const Work = () => {
