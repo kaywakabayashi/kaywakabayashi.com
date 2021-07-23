@@ -11,6 +11,15 @@ export const Container = styled(motion.div)`
   width: 100%;
   scroll-snap-align: start;
 `;
+export const SectionContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  //scroll-snap-type: y mandatory;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0 1.5rem;
+`;
 
 export const NavContainer = styled.div`
   display: flex;
@@ -19,31 +28,25 @@ export const NavContainer = styled.div`
 export const MainContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  background-color: transparent;
   //scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   height: 90%;
 `;
 
-export const SectionContainer = styled(motion.div)`
-  padding: 0 0.5em;
-  background-color: transparent;
-  scroll-snap-type: y mandatory;
-  width: 100wh;
-  height: 100%;
-  min-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-`;
+// export const SectionContainer = styled(motion.div)`
+//   padding: 0 0.5em;
+//   scroll-snap-type: y mandatory;
+//   width: 100wh;
+//   height: 100%;
+//   min-height: 100%;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+// `;
 
 export const ContentContainer = styled(motion.div)`
-  background-color: transparent;
   height: 100%;
-  @media (min-width: 768px) {
-    padding: 1em 0;
-  }
+  padding: 2rem 0 0 0;
 `;
 
 export const ContactWrapper = styled(motion.div)`
@@ -68,7 +71,8 @@ export const ContactWrapper = styled(motion.div)`
 export const Message = styled(motion.div)`
   color: black;
   font-size: 2em;
-  margin-right: 2rem;
+  margin-right: auto;
+  padding: auto;
 
   @media (min-width: 320px) {
     font-size: 2em;
@@ -89,8 +93,9 @@ export const Message = styled(motion.div)`
 `;
 
 export const Button = styled(motion.button)`
-  text-align: left;
   overflow-x: auto;
+  padding: auto;
+  margin: auto;
 `;
 export const SectionTitle = styled(motion.div)`
   color: black;

@@ -364,66 +364,64 @@ function Home() {
           </RowContainer>
         </SectionContainer>
         <SectionContainer id="contact">
-          <ContentContainer>
-            <Message id="contact">
-              <ScrollInMessage
-                duration={2}
-                x={-200}
-                hiddenOpacity={1}
-                opacity={0.2}
+          <Message>
+            <ScrollInMessage
+              duration={2}
+              x={-200}
+              hiddenOpacity={1}
+              opacity={0.2}
+            >
+              WAYS TO SAY HI
+            </ScrollInMessage>
+          </Message>
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={10}
+              duration={3}
+              hiddenOpacity={0}
+              opacity={1}
+            >
+              <p onClick={copyEmail}>
+                {copySuccessMessage} {instructions}
+              </p>
+            </ScrollInMessage>
+          </Message>
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={20}
+              duration={3}
+              hiddenOpacity={0}
+              opacity={1}
+            >
+              <a
+                href="https://github.com/katsuyaw"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                WAYS TO SAY HI
-              </ScrollInMessage>
-            </Message>
-            <Message>
-              <ScrollInMessage
-                hover={1.1}
-                y={10}
-                duration={3}
-                hiddenOpacity={0}
-                opacity={1}
-              >
-                <p onClick={copyEmail}>
-                  {copySuccessMessage} {instructions}
-                </p>
-              </ScrollInMessage>
-            </Message>
-            <Message>
-              <ScrollInMessage
-                hover={1.1}
-                y={20}
-                duration={3}
-                hiddenOpacity={0}
-                opacity={1}
-              >
-                <a
-                  href="https://github.com/katsuyaw"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Button>GITHUB</Button>
-                </a>
-              </ScrollInMessage>
-            </Message>
+                <Button>GITHUB</Button>
+              </a>
+            </ScrollInMessage>
+          </Message>
 
-            <Message>
-              <ScrollInMessage
-                hover={1.1}
-                y={35}
-                duration={3}
-                hiddenOpacity={0}
-                opacity={1}
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={35}
+              duration={3}
+              hiddenOpacity={0}
+              opacity={1}
+            >
+              <a
+                href="https://linkedin.com/in/kats"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <a
-                  href="https://linkedin.com/in/kats"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Button>LINKEDIN</Button>
-                </a>
-              </ScrollInMessage>
-            </Message>
-          </ContentContainer>
+                <Button>LINKEDIN</Button>
+              </a>
+            </ScrollInMessage>
+          </Message>
         </SectionContainer>
       </Container>
     </>
