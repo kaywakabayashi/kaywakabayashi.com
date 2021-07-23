@@ -41,7 +41,7 @@ export const contactMotion = {
   whileHover: { scale: 1.05, opacity: 1 },
 };
 
-const ScrollInMessage = ({
+const ScrollInMotion = ({
   children,
   duration,
   x,
@@ -77,4 +77,4 @@ const ScrollInMessage = ({
   );
 };
 
-export default ScrollInMessage;
+export default ScrollInMotion;
