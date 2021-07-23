@@ -34,16 +34,6 @@ export const MainContainer = styled(motion.div)`
   height: 90%;
 `;
 
-// export const SectionContainer = styled(motion.div)`
-//   padding: 0 0.5em;
-//   scroll-snap-type: y mandatory;
-//   width: 100wh;
-//   height: 100%;
-//   min-height: 100%;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-// `;
-
 export const ContentContainer = styled(motion.div)`
   height: 100%;
   padding: 2rem 0 0 0;

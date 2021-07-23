@@ -1,7 +1,6 @@
 import React from "react";
 import { Message, Button } from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
-import "../index.css";
 import { shadowMessageMotion, messageMotion } from "../styles/motions";
 
 const Hero = () => {
