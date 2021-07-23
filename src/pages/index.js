@@ -1,24 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useAnimation,
-  AnimateSharedLayout,
-} from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Cover from "../img/katsuya.jpg";
-import * as Scroll from "react-scroll";
-import {
-  Link as LinkS,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import Footer from "../components/Footer";
+import { Link as LinkS } from "react-scroll";
+
 import "../index.css";
 import Marquee from "react-fast-marquee";
 
@@ -90,7 +76,7 @@ function Home() {
       font-size: 2em;
     }
     @media (min-width: 360px) {
-      font-size: 2.6em;
+      font-size: 2.4em;
     }
     @media (min-width: 376px) {
       font-size: 2.5em;
@@ -103,6 +89,30 @@ function Home() {
       font-size: 5em;
     }
   `;
+
+  // const Description = styled(motion.div)`
+  //   color: black;
+  //   opacity: 0.5;
+  //   font-size: 0.5em;
+  //   margin-right: 2rem;
+
+  //   @media (min-width: 320px) {
+  //     font-size: 0.7em;
+  //   }
+  //   @media (min-width: 360px) {
+  //     font-size: 0.9em;
+  //   }
+  //   @media (min-width: 376px) {
+  //     font-size: 1.1em;
+  //   }
+
+  //   @media (min-width: 768px) {
+  //     font-size: 1.2em;
+  //   }
+  //   @media (min-width: 1025px) {
+  //     font-size: 1.5em;
+  //   }
+  // `;
 
   const Button = styled(motion.button)`
     text-align: left;
@@ -184,12 +194,12 @@ function Home() {
   const [copySuccessMessage, setCopySuccessMessage] = useState();
   const [instructions, setInstructions] = useState("EMAIL ME");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCopySuccessMessage("Looking forward to hearing from you!");
-    }, 10000);
-    return () => clearTimeout(timer);
-  }, [copySuccessMessage]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setCopySuccessMessage("Looking forward to hearing from you!");
+  //   }, 100000);
+  //   return () => clearTimeout(timer);
+  // }, [copySuccessMessage]);
 
   function copyEmail() {
     navigator.clipboard.writeText(email);
@@ -197,11 +207,7 @@ function Home() {
     setInstructions("");
   }
 
-  const scrollTop = () => {
-    scroll.scrollToTop();
-  };
-
-  const ScrollIn = ({
+  const ScrollInMessage = ({
     children,
     duration,
     x,
@@ -259,7 +265,7 @@ function Home() {
     whileHover: {
       scale: 1.2,
       textShadow: "0px 0px 15px rgb(255, 255, 255)",
-      transition: { duration: 1 },
+      transition: { duration: 0.5 },
       originX: 0,
     },
     transition: { duration: 3, stiffness: 100 },
@@ -390,178 +396,174 @@ function Home() {
           </MainContainer>
         </SectionContainer>
 
-        {/* <EmailContainer
-          onClick={copyEmail}
-          initial={{ opacity: 1 }}
-          whileHover={{
-            backgroundColor: "white",
-            color: "black",
-            opacity: 0.8,
-            scale: 1.1,
-          }}
-        >
-          {copySuccessMessage}
-        </EmailContainer> */}
         <SectionContainer id="work">
-          <ContentContainer>
-            <SectionTitle>
-              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
-                Work
-              </ScrollIn>
-              <ScrollIn
-                hover={1.1}
-                y={15}
-                duration={1}
-                hiddenOpacity={0.5}
-                opacity={1}
-              >
-                <a href="https://lawistudios.com">LAWI STUDIOS/ WEB DESIGNER</a>
-              </ScrollIn>
-              <ScrollIn duration={2} x={-100} hiddenOpacity={0.5}>
-                PROJECTS
-              </ScrollIn>
-              <ScrollIn
-                hover={1.1}
-                y={15}
-                duration={2}
-                hiddenOpacity={0.5}
-                opacity={1}
-              >
-                <a href="https://efficiently.app">EFFICIENTLY APP</a>
-              </ScrollIn>
-              <ScrollIn
-                hover={1.1}
-                y={15}
-                duration={3}
-                hiddenOpacity={0.5}
-                opacity={1}
-              >
-                <a href="https://github.com/smc-tech-talk/Lets-Trade">
-                  LET'S TRADE
-                </a>
-              </ScrollIn>
+          <Message>
+            <ScrollInMessage duration={2} x={-100} hiddenOpacity={0.5}>
+              Work
+            </ScrollInMessage>
+          </Message>
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={10}
+              duration={2}
+              hiddenOpacity={0.5}
+              opacity={1}
+            >
+              <a href="https://lawistudios.com">
+                <Button>LAWI STUDIOS</Button>
+              </a>
+            </ScrollInMessage>
+          </Message>
 
-              {/* <WorkImg1 src={Work1}></WorkImg1> */}
-            </SectionTitle>
-          </ContentContainer>
+          <Message>
+            <ScrollInMessage duration={2} x={-100} hiddenOpacity={0.5}>
+              PROJECTS
+            </ScrollInMessage>
+          </Message>
+
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={20}
+              duration={2}
+              hiddenOpacity={0.5}
+              opacity={1}
+            >
+              <a href="https://efficiently.app">EFFICIENTLY APP</a>
+            </ScrollInMessage>
+          </Message>
+
+          <Message>
+            <ScrollInMessage
+              hover={1.1}
+              y={35}
+              duration={2}
+              hiddenOpacity={0.5}
+              opacity={1}
+            >
+              <a href="https://github.com/smc-tech-talk/Lets-Trade">
+                LET'S TRADE
+              </a>
+            </ScrollInMessage>
+          </Message>
         </SectionContainer>
         <SectionContainer id="me">
-          <ContentContainer>
-            <SectionTitle>
-              <ScrollIn duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
-                Me
-              </ScrollIn>
-            </SectionTitle>
-            <RowContainer>
-              <ScrollIn duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
-                <LeftContainer>
-                  <Image src={Cover} />
-                </LeftContainer>
-              </ScrollIn>
+          <SectionTitle>
+            <ScrollInMessage
+              duration={2}
+              x={-100}
+              hiddenOpacity={1}
+              opacity={0.2}
+            >
+              Me
+            </ScrollInMessage>
+          </SectionTitle>
+          <RowContainer>
+            <ScrollInMessage
+              duration={1.5}
+              x={-100}
+              hiddenOpacity={0}
+              opacity={0.7}
+            >
+              <LeftContainer>
+                <Image src={Cover} />
+              </LeftContainer>
+            </ScrollInMessage>
 
-              <ScrollIn duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
-                <RightContainer>
-                  <ProfileName>HI, I'M KATSUYA WAKABAYASHI</ProfileName>
-                  <Marquee speed={120}>
-                    <p>
-                      Love working with creators.
-                      <span className="px-5" />
-                    </p>
-                  </Marquee>
-                  <Marquee speed={120}>
-                    <p className="">
-                      Skilled in{" "}
-                      <span className="font-bold">
-                        React.js, React Native, JavaScript, C++, Python
-                      </span>{" "}
-                      etc. <span className="px-5" />
-                    </p>
-                  </Marquee>
-                  <Marquee speed={120}>
-                    <p>
-                      Currently studying at{" "}
-                      <span className="font-bold">UCLA.</span>
-                      <span className="px-5" />
-                    </p>
-                  </Marquee>
-                </RightContainer>
-              </ScrollIn>
-            </RowContainer>
-
-            <p className="font-semibold"></p>
-          </ContentContainer>
+            <ScrollInMessage
+              duration={2}
+              x={100}
+              hiddenOpacity={0.1}
+              opacity={1}
+            >
+              <RightContainer>
+                <ProfileName>HI, I'M KATSUYA WAKABAYASHI</ProfileName>
+                <Marquee speed={100}>
+                  <p>
+                    Love working with creators.
+                    <span className="px-2" />
+                  </p>
+                </Marquee>
+                <Marquee speed={100}>
+                  <p className="">
+                    Skilled in{" "}
+                    <span className="font-bold">
+                      React.js, React Native, JavaScript, C++, Python
+                    </span>{" "}
+                    etc. <span className="px-2" />
+                  </p>
+                </Marquee>
+                <Marquee speed={100}>
+                  <p>
+                    Currently studying at{" "}
+                    <span className="font-bold">UCLA.</span>
+                    <span className="px-2" />
+                  </p>
+                </Marquee>
+              </RightContainer>
+            </ScrollInMessage>
+          </RowContainer>
         </SectionContainer>
         <SectionContainer id="contact">
           <ContentContainer>
             <Message id="contact">
-              <ScrollIn duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
+              <ScrollInMessage
+                duration={2}
+                x={-200}
+                hiddenOpacity={1}
+                opacity={0.2}
+              >
                 WAYS TO SAY HI
-              </ScrollIn>
+              </ScrollInMessage>
             </Message>
             <Message>
-              <ScrollIn
-                opacity={0.7}
-                duration={5}
-                hiddenOpacity={0.3}
-                hiddenScale={1.3}
-                hover={1.2}
+              <ScrollInMessage
+                hover={1.1}
+                y={10}
+                duration={3}
+                hiddenOpacity={0}
+                opacity={1}
               >
                 <p onClick={copyEmail}>
                   {copySuccessMessage} {instructions}
                 </p>
-              </ScrollIn>
+              </ScrollInMessage>
             </Message>
-            <Message
-              initial={{ opacity: 0, x: 0, y: 15 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                scale: 1.1,
-                originX: 0,
-              }}
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 15px rgb(255, 255, 255)",
-              }}
-              transition={{ stiffness: 300 }}
-              whileTap={{
-                scale: 1.2,
-              }}
-            >
-              <a
-                href="https://github.com/katsuyaw"
-                rel="noopener noreferrer"
-                target="_blank"
+            <Message>
+              <ScrollInMessage
+                hover={1.1}
+                y={20}
+                duration={3}
+                hiddenOpacity={0}
+                opacity={1}
               >
-                GITHUB
-              </a>
+                <a
+                  href="https://github.com/katsuyaw"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Button>GITHUB</Button>
+                </a>
+              </ScrollInMessage>
             </Message>
-            <Message
-              initial={{ opacity: 0, x: 0, y: 15 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                scale: 1.1,
-                originX: 0,
-              }}
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 15px rgb(255, 255, 255)",
-              }}
-              transition={{ stiffness: 300 }}
-              whileTap={{
-                scale: 1.2,
-              }}
-            >
-              <a
-                href="https://linkedin.com/in/kats"
-                rel="noopener noreferrer"
-                target="_blank"
+
+            <Message>
+              <ScrollInMessage
+                hover={1.1}
+                y={35}
+                duration={3}
+                hiddenOpacity={0}
+                opacity={1}
               >
-                LINKEDIN
-              </a>
+                <a
+                  href="https://linkedin.com/in/kats"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Button>LINKEDIN</Button>
+                </a>
+              </ScrollInMessage>
             </Message>
           </ContentContainer>
         </SectionContainer>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LetsTradeScreen from "../img/LetsTradeScreen.png";
 import EfficientlyScreen from "../img/EfficientlyScreen.png";
 
@@ -75,7 +74,7 @@ function Projects() {
           </div>
           <div>
             <div className="items-center">
-              <img src={LetsTradeScreen} />
+              <img src={LetsTradeScreen} alt="lets-trade" />
             </div>
           </div>
           <div className="font-thin text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:transform sm:rotate-90 transition duration-500 ease-in-out">
@@ -151,7 +150,7 @@ function Projects() {
           </div>
           <div>
             <div className="items-center">
-              <img src={EfficientlyScreen} />
+              <img src={EfficientlyScreen} alt="lets-trade" />
             </div>
           </div>
           <div className="font-thin text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:transform sm:rotate-90 transition duration-500 ease-in-out">

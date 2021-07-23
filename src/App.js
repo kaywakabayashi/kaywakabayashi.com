@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Router } from "react-router-dom";
-import Footer from "./components/Footer";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages";
 import About from "./pages/about";
 import Projects from "./pages/projects";
-import Dropdown from "./components/Dropdown";
-import Navbar from "./components/Navbar";
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles, GlobalStyle } from "./themes.js";
+import { lightTheme, darkTheme } from "./themes.js";
 import "./index.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggle = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   useEffect(() => {
     const hideMenu = () => {
@@ -36,27 +33,21 @@ function App() {
 
   const [theme, setTheme] = useState("light");
 
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  // const themeToggler = () => {
+  //   theme === "light" ? setTheme("dark") : setTheme("light");
+  // };
 
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <StyledApp className="Monrope">
-          <GlobalStyles />
-
-          {/* <Navbar toggle={toggle} />
-          <Dropdown
-            isOpen={isOpen}
-            toggle={toggle}
-            themeToggler={themeToggler}
-          /> */}
-          <Switch className="font-loader">
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
-          </Switch>
+          <Router>
+            <Switch className="font-loader">
+              <Route path="/" exact component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/projects" component={Projects} />
+            </Switch>
+          </Router>
         </StyledApp>
       </ThemeProvider>
     </>
