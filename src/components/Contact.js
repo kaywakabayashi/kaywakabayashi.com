@@ -1,17 +1,6 @@
-import React, { useState } from "react";
-import {
-  Container,
-  NavContainer,
-  MainContainer,
-  SectionContainer,
-  Message,
-  Button,
-} from "../styles/styles";
+import React from "react";
+import { Message, Button } from "../styles/styles";
 import "../index.css";
-import Hero from "../components/Hero";
-import Nav from "../components/Nav";
-import Work from "../components/Work";
-import Me from "../components/Me";
 import ScrollInMessage from "../styles/motions";
 
 const Contact = ({ copyEmail, copySuccessMessage, instructions }) => {
