@@ -86,6 +86,7 @@ export const Button = styled(motion.button)`
   overflow-x: auto;
   padding: auto;
   margin: auto;
+  text-align: left;
 `;
 export const SectionTitle = styled(motion.div)`
   color: black;
