@@ -88,13 +88,14 @@ function Home() {
 
   const Message = styled(motion.div)`
     color: black;
-    font-size: 1.5em;
+    font-size: 2em;
+    margin-right: 2rem;
 
     @media (min-width: 320px) {
-      font-size: 1.5em;
+      font-size: 2em;
     }
     @media (min-width: 360px) {
-      font-size: 2em;
+      font-size: 2.6em;
     }
     @media (min-width: 376px) {
       font-size: 2.5em;
@@ -109,8 +110,7 @@ function Home() {
   `;
 
   const Button = styled(motion.button)`
-    text-align: right;
-    width: 100%;
+    background-color: red;
     text-align: left;
   `;
   const SectionTitle = styled(motion.div)`
