@@ -34,18 +34,18 @@ function Home() {
   `;
 
   const MainContainer = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: transparent;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
     overflow-y: hidden;
-    height: 100vh;
-    @media (min-width: 768px) {
-      padding: 1em 0;
-    }
+    height: 100%;
   `;
 
   const SectionContainer = styled(motion.div)`
-    padding: 1em 2em 0;
+    padding: 0 0.5em 0;
     background-color: transparent;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
@@ -62,9 +62,34 @@ function Home() {
     }
   `;
 
+  const NavContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+  `;
+
+  const ContactWrapper = styled(motion.div)`
+    color: black;
+    font-size: 1em;
+    margin: 0;
+    text-align: right;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0;
+    @media (min-width: 320px) {
+      font-size: 1.5em;
+    }
+    @media (min-width: 360px) {
+      font-size: 1.7em;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2em;
+    }
+  `;
+
   const Message = styled(motion.div)`
     color: black;
     font-size: 1.5em;
+
     @media (min-width: 320px) {
       font-size: 1.5em;
     }
@@ -81,6 +106,12 @@ function Home() {
     @media (min-width: 1025px) {
       font-size: 5em;
     }
+  `;
+
+  const Button = styled(motion.button)`
+    text-align: right;
+    width: 100%;
+    text-align: left;
   `;
   const SectionTitle = styled(motion.div)`
     color: black;
@@ -153,12 +184,6 @@ function Home() {
     width: auto;
     margin: auto;
   `;
-  // const WorkImg1 = styled(motion.img)`
-  //   position: absolute;
-  //   height: 15rem;
-  //   width: auto;
-  //   bottom: -10;
-  // `;
 
   const EmailContainer = styled(motion.button)`
     display: fixed;
@@ -271,6 +296,30 @@ function Home() {
         id="container"
       >
         <SectionContainer>
+          <NavContainer>
+            <ContactWrapper
+              initial={{ opacity: 1, x: 200 }}
+              animate={{
+                opacity: 0.7,
+                x: 0,
+                y: 5,
+                transition: { duration: 3 },
+                originX: 0,
+              }}
+            >
+              <LinkS
+                activeClass="active"
+                to="work"
+                spy={true}
+                offset={0}
+                duration={500}
+                smooth={true}
+              >
+                <Button>CONTACT</Button>
+              </LinkS>
+            </ContactWrapper>
+          </NavContainer>
+
           <MainContainer id="top">
             <Message
               initial={{ opacity: 0.8 }}
@@ -309,7 +358,7 @@ function Home() {
                   duration={500}
                   smooth={true}
                 >
-                  KATSUYA.
+                  <Button>KATSUYA.</Button>
                 </LinkS>
               </Message>
             </div>
@@ -352,7 +401,7 @@ function Home() {
                 duration={500}
                 smooth={true}
               >
-                FRONT-END DEVELOPER
+                <Button>FRONT-END DEVELOPER</Button>
               </LinkS>
             </Message>
 
@@ -398,13 +447,13 @@ function Home() {
                 smooth={true}
                 duration={500}
               >
-                UI/UX DESIGNER.
+                <Button>UI/UX DESIGNER.</Button>
               </LinkS>
             </Message>
           </MainContainer>
         </SectionContainer>
 
-        <EmailContainer
+        {/* <EmailContainer
           onClick={copyEmail}
           initial={{ opacity: 1 }}
           whileHover={{
@@ -415,7 +464,7 @@ function Home() {
           }}
         >
           {copySuccessMessage}
-        </EmailContainer>
+        </EmailContainer> */}
         <SectionContainer id="work">
           <ContentContainer>
             <SectionTitle>
