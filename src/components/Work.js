@@ -1,17 +1,17 @@
 import React from "react";
 import { Message, Button } from "../styles/styles";
-import ScrollInMessage from "../styles/motions";
+import ScrollInMotion from "../styles/motions";
 
 const Work = () => {
   return (
     <>
       <Message>
-        <ScrollInMessage duration={2} x={-100} hiddenOpacity={0.5}>
+        <ScrollInMotion duration={2} x={-100} hiddenOpacity={0.5}>
           Work
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={10}
           duration={2}
@@ -21,17 +21,17 @@ const Work = () => {
           <a href="https://lawistudios.com">
             <Button>LAWI STUDIOS</Button>
           </a>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
 
       <Message>
-        <ScrollInMessage duration={2} x={-100} hiddenOpacity={0.5}>
+        <ScrollInMotion duration={2} x={-100} hiddenOpacity={0.5}>
           PROJECTS
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
 
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={20}
           duration={2}
@@ -39,11 +39,11 @@ const Work = () => {
           opacity={1}
         >
           <a href="https://efficiently.app">EFFICIENTLY APP</a>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
 
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={35}
           duration={2}
@@ -51,7 +51,7 @@ const Work = () => {
           opacity={1}
         >
           <a href="https://github.com/smc-tech-talk/Lets-Trade">LET'S TRADE</a>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
     </>
   );

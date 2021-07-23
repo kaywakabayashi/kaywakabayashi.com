@@ -11,29 +11,24 @@ import {
 import Cover from "../img/katsuya.jpg";
 import "../index.css";
 import Marquee from "react-fast-marquee";
-import ScrollInMessage from "../styles/motions";
+import ScrollInMotion from "../styles/motions";
 
 const Me = () => {
   return (
     <>
       <SectionTitle>
-        <ScrollInMessage duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
+        <ScrollInMotion duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
           Me
-        </ScrollInMessage>
+        </ScrollInMotion>
       </SectionTitle>
       <RowContainer>
-        <ScrollInMessage
-          duration={1.5}
-          x={-100}
-          hiddenOpacity={0}
-          opacity={0.7}
-        >
+        <ScrollInMotion duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
           <LeftContainer>
             <Image src={Cover} />
           </LeftContainer>
-        </ScrollInMessage>
+        </ScrollInMotion>
 
-        <ScrollInMessage duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
+        <ScrollInMotion duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
           <RightContainer>
             <ProfileName>HI, I'M KATSUYA WAKABAYASHI</ProfileName>
             <Marquee speed={100}>
@@ -58,7 +53,7 @@ const Me = () => {
               </p>
             </Marquee>
           </RightContainer>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </RowContainer>
     </>
   );

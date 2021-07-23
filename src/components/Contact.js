@@ -1,7 +1,7 @@
 import React from "react";
 import { Message, Button } from "../styles/styles";
 import "../index.css";
-import ScrollInMessage from "../styles/motions";
+import ScrollInMotion from "../styles/motions";
 
 const Contact = ({
   copyEmail,
@@ -19,12 +19,12 @@ const Contact = ({
   return (
     <>
       <Message>
-        <ScrollInMessage duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
+        <ScrollInMotion duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
           WAYS TO SAY HI
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={10}
           duration={3.5}
@@ -36,10 +36,10 @@ const Contact = ({
           <p onClick={copyEmail}>
             {copySuccessMessage} {instructions}
           </p>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={20}
           duration={3}
@@ -53,11 +53,11 @@ const Contact = ({
           >
             <Button>GITHUB</Button>
           </a>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
 
       <Message>
-        <ScrollInMessage
+        <ScrollInMotion
           hover={1.1}
           y={35}
           duration={3}
@@ -71,7 +71,7 @@ const Contact = ({
           >
             <Button>LINKEDIN</Button>
           </a>
-        </ScrollInMessage>
+        </ScrollInMotion>
       </Message>
     </>
   );
