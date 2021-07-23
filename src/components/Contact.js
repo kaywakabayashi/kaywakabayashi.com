@@ -3,7 +3,19 @@ import { Message, Button } from "../styles/styles";
 import "../index.css";
 import ScrollInMessage from "../styles/motions";
 
-const Contact = ({ copyEmail, copySuccessMessage, instructions }) => {
+const Contact = ({
+  copyEmail,
+  copySuccessMessage,
+  instructions,
+  setCopySuccessMessage,
+  setInstructions,
+}) => {
+  const email = "hello@katsuya.me";
+  function copyEmail() {
+    navigator.clipboard.writeText(email);
+    setCopySuccessMessage("Email Copied");
+    setInstructions("");
+  }
   return (
     <>
       <Message>

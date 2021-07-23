@@ -13,14 +13,8 @@ import Me from "../components/Me";
 import Contact from "../components/Contact";
 
 function Home() {
-  const email = "hello@katsuya.me";
   const [copySuccessMessage, setCopySuccessMessage] = useState();
   const [instructions, setInstructions] = useState("EMAIL ME");
-  function copyEmail() {
-    navigator.clipboard.writeText(email);
-    setCopySuccessMessage("Email Copied");
-    setInstructions("");
-  }
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -48,9 +42,10 @@ function Home() {
         </SectionContainer>
         <SectionContainer id="contact">
           <Contact
-            copyEmail={copyEmail}
             copySuccessMessage={copySuccessMessage}
             instructions={instructions}
+            setCopySuccessMessage={setCopySuccessMessage}
+            setInstructions={setInstructions}
           />
         </SectionContainer>
       </Container>
