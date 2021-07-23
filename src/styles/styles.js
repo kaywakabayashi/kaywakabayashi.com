@@ -21,7 +21,9 @@ export const MainContainer = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   background-color: transparent;
-  scroll-snap-type: y mandatory;
+  //scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 90%;
 `;
 
@@ -32,7 +34,8 @@ export const SectionContainer = styled(motion.div)`
   width: 100wh;
   height: 100%;
   min-height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const ContentContainer = styled(motion.div)`
