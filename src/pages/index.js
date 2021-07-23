@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import styled from "styled-components";
+import {
+  Container,
+  NavContainer,
+  MainContainer,
+  SectionContainer,
+  ContentContainer,
+  ContactWrapper,
+  Message,
+  Button,
+  SectionTitle,
+  RowContainer,
+  ProfileName,
+  LeftContainer,
+  RightContainer,
+  Image,
+} from "../styles/styles";
 import Cover from "../img/katsuya.jpg";
 import { Link as LinkS } from "react-scroll";
 
@@ -9,87 +24,6 @@ import "../index.css";
 import Marquee from "react-fast-marquee";
 
 function Home() {
-  const Container = styled(motion.div)`
-    background-color: white;
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
-  `;
-
-  const NavContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-  `;
-  const MainContainer = styled(motion.div)`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: transparent;
-    scroll-snap-type: y mandatory;
-    height: 90%;
-  `;
-
-  const SectionContainer = styled(motion.div)`
-    padding: 0 0.5em;
-    background-color: transparent;
-    scroll-snap-type: y mandatory;
-    width: 100wh;
-    height: 100%;
-    min-height: 100%;
-    overflow-y: scroll;
-  `;
-
-  const ContentContainer = styled(motion.div)`
-    border-radius: 25px;
-    background-color: transparent;
-    height: 100%;
-    @media (min-width: 768px) {
-      padding: 1em 0;
-    }
-  `;
-
-  const ContactWrapper = styled(motion.div)`
-    color: black;
-    font-size: 1em;
-    margin: 0;
-    text-align: right;
-    margin: 0.5rem 0.5rem 0 0;
-    padding: 0;
-    @media (min-width: 320px) {
-      font-size: 1.5em;
-    }
-    @media (min-width: 360px) {
-      font-size: 1.7em;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 2em;
-    }
-  `;
-
-  const Message = styled(motion.div)`
-    color: black;
-    font-size: 2em;
-    margin-right: 2rem;
-
-    @media (min-width: 320px) {
-      font-size: 2em;
-    }
-    @media (min-width: 360px) {
-      font-size: 2.4em;
-    }
-    @media (min-width: 376px) {
-      font-size: 2.5em;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 3.5em;
-    }
-    @media (min-width: 1025px) {
-      font-size: 5em;
-    }
-  `;
-
   // const Description = styled(motion.div)`
   //   color: black;
   //   opacity: 0.5;
@@ -113,82 +47,6 @@ function Home() {
   //     font-size: 1.5em;
   //   }
   // `;
-
-  const Button = styled(motion.button)`
-    text-align: left;
-    overflow-x: auto;
-  `;
-  const SectionTitle = styled(motion.div)`
-    color: black;
-    font-size: 1.9em;
-    margin-bottom: 1rem;
-    @media (min-width: 320px) {
-      font-size: 1.8em;
-    }
-    @media (min-width: 360px) {
-      font-size: 2.5em;
-    }
-    @media (min-width: 481px) {
-      font-size: 2.5em;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 3.5em;
-    }
-    @media (min-width: 1025px) {
-      font-size: 4em;
-    }
-  `;
-
-  const RowContainer = styled(motion.div)`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @media (min-width: 1025px) {
-      //flex-direction: row;
-    }
-  `;
-  const ProfileName = styled(motion.div)`
-    text-align: center;
-    font-size: 0.5em;
-  `;
-
-  const LeftContainer = styled(motion.div)`
-    margin: auto;
-
-    @media (min-width: 1025px) {
-      width: 20rem;
-    }
-  `;
-
-  const RightContainer = styled(motion.div)`
-    color: black;
-    font-size: 1em;
-
-    @media (min-width: 321px) {
-      font-size: 2em;
-    }
-
-    @media (min-width: 481px) {
-      font-size: 3.5em;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 3.5em;
-    }
-    @media (min-width: 1025px) {
-      font-size: 5em;
-    }
-  `;
-
-  const Image = styled(motion.img)`
-    object-fit: cover;
-    height: 15rem;
-    width: auto;
-    margin: auto;
-  `;
 
   const email = "hello@katsuya.me";
   const [copySuccessMessage, setCopySuccessMessage] = useState();
