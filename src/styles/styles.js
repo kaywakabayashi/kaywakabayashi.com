@@ -39,7 +39,6 @@ export const SectionContainer = styled(motion.div)`
 `;
 
 export const ContentContainer = styled(motion.div)`
-  border-radius: 25px;
   background-color: transparent;
   height: 100%;
   @media (min-width: 768px) {
