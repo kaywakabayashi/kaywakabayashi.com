@@ -4,18 +4,17 @@ import "../index.css";
 import ScrollInMotion from "../styles/motions";
 
 const Contact = ({
-  copyEmail,
   copySuccessMessage,
   instructions,
   setCopySuccessMessage,
   setInstructions,
 }) => {
   const email = "hello@katsuya.me";
-  function copyEmail() {
+  const copyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopySuccessMessage("Email Copied");
     setInstructions("");
-  }
+  };
   return (
     <>
       <Message>
