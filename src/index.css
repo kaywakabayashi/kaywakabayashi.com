@@ -5,6 +5,10 @@
 html {
   @apply font-Monrope;
 }
+body {
+  min-height: 100vh;
+  height: 100vh;
+}
 
 @keyframes marquee {
   0% {

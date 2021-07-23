@@ -9,8 +9,6 @@ import {
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Cover from "../img/katsuya.jpg";
-import Work1 from "../img/lawistudios.png";
-import { Link } from "react-router-dom";
 import * as Scroll from "react-scroll";
 import {
   Link as LinkS,
@@ -21,7 +19,6 @@ import {
   scroller,
 } from "react-scroll";
 import Footer from "../components/Footer";
-import Banner from "../components/Banner";
 import "../index.css";
 import Marquee from "react-fast-marquee";
 
@@ -33,24 +30,27 @@ function Home() {
     scroll-snap-align: start;
   `;
 
+  const NavContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+  `;
   const MainContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: transparent;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    height: 100%;
+    height: 90%;
   `;
 
   const SectionContainer = styled(motion.div)`
-    padding: 0 0.5em 0;
+    padding: 0 0.5em;
     background-color: transparent;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    height: 100vh;
+    width: 100wh;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
   `;
 
   const ContentContainer = styled(motion.div)`
@@ -60,11 +60,6 @@ function Home() {
     @media (min-width: 768px) {
       padding: 1em 0;
     }
-  `;
-
-  const NavContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
   `;
 
   const ContactWrapper = styled(motion.div)`
@@ -110,8 +105,8 @@ function Home() {
   `;
 
   const Button = styled(motion.button)`
-    background-color: red;
     text-align: left;
+    overflow-x: auto;
   `;
   const SectionTitle = styled(motion.div)`
     color: black;
@@ -185,63 +180,21 @@ function Home() {
     margin: auto;
   `;
 
-  const EmailContainer = styled(motion.button)`
-    display: fixed;
-    justify-content: center;
-    background-color: black;
-    border-radius: 0.8rem;
-    border-color: black;
-    border-width: 0.2rem;
-    color: white;
-    padding: 0.5rem 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 13rem;
-
-    @media (min-width: 769px) {
-      right: 2.5rem;
-      margin-right: 0;
-    }
-  `;
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [30, -30]);
-  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
-
-  function handleMouse(event) {
-    x.set(event.pageX);
-    y.set(event.pageY);
-  }
   const email = "hello@katsuya.me";
-  const [copySuccessMessage, setCopySuccessMessage] = useState(email);
-  const [instructions, setInstructions] = useState(email);
+  const [copySuccessMessage, setCopySuccessMessage] = useState();
+  const [instructions, setInstructions] = useState("EMAIL ME");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCopySuccessMessage(email);
-    }, 995000);
+      setCopySuccessMessage("Looking forward to hearing from you!");
+    }, 10000);
     return () => clearTimeout(timer);
   }, [copySuccessMessage]);
 
   function copyEmail() {
     navigator.clipboard.writeText(email);
-    setCopySuccessMessage("Copied");
+    setCopySuccessMessage("Email Copied");
     setInstructions("");
-  }
-
-  function showInstruction() {
-    if (copySuccessMessage) {
-      return;
-    }
-    setInstructions(`click to copy`);
-  }
-
-  function hideInstruction() {
-    setInstructions(`${email}`);
   }
 
   const scrollTop = () => {
@@ -284,6 +237,45 @@ function Home() {
     );
   };
 
+  const shadowMessageMotion = {
+    initial: { opacity: 0.8, x: 0, y: 0 },
+    animate: {
+      opacity: 0.03,
+      x: 0,
+      y: 5,
+      transition: { duration: 3 },
+    },
+  };
+
+  const messageMotion = {
+    initial: { opacity: 0, y: 15 },
+    animate: {
+      opacity: 1,
+      y: 5,
+      transition: { duration: 1 },
+      scale: 1.1,
+      originX: 0,
+    },
+    whileHover: {
+      scale: 1.2,
+      textShadow: "0px 0px 15px rgb(255, 255, 255)",
+      transition: { duration: 1 },
+      originX: 0,
+    },
+    transition: { duration: 3, stiffness: 100 },
+  };
+
+  const contactMotion = {
+    initial: { opacity: 0, x: 200 },
+    animate: {
+      opacity: 0.5,
+      x: 0,
+      y: 5,
+      transition: { duration: 3 },
+    },
+    whileHover: { scale: 1.05, opacity: 1 },
+  };
+
   return (
     <>
       <Container
@@ -298,18 +290,15 @@ function Home() {
         <SectionContainer>
           <NavContainer>
             <ContactWrapper
-              initial={{ opacity: 1, x: 200 }}
-              animate={{
-                opacity: 0.7,
-                x: 0,
-                y: 5,
-                transition: { duration: 3 },
-                originX: 0,
-              }}
+              variants={contactMotion}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
             >
               <LinkS
                 activeClass="active"
-                to="work"
+                to="contact"
                 spy={true}
                 offset={0}
                 duration={500}
@@ -322,76 +311,42 @@ function Home() {
 
           <MainContainer id="top">
             <Message
-              initial={{ opacity: 0.8 }}
-              animate={{
-                opacity: 0.03,
-                x: 0,
-                y: 5,
-                transition: { duration: 3 },
-              }}
-              whileHover={{ scale: 1 }}
+              variants={shadowMessageMotion}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
             >
               HELLO, I AM
             </Message>
-            <div>
-              <Message
-                initial={{ opacity: 0.1, x: 0, y: 15 }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  y: 5,
-                  transition: { duration: 3 },
-                  scale: 1.1,
-                  originX: 0,
-                }}
-                whileHover={{
-                  scale: 1.2,
-                  textShadow: "0px 0px 15px rgb(255, 255, 255)",
-                  originX: 0,
-                }}
-                transition={{ stiffness: 300 }}
-              >
-                <LinkS
-                  to="me"
-                  spy={true}
-                  offset={0}
-                  duration={500}
-                  smooth={true}
-                >
-                  <Button>KATSUYA.</Button>
-                </LinkS>
-              </Message>
-            </div>
 
             <Message
-              initial={{ opacity: 0.8, x: 0, y: 0 }}
-              animate={{
-                opacity: 0.03,
-                x: 0,
-                y: 5,
-                transition: { duration: 3 },
-              }}
-              whileHover={{ scale: 1 }}
+              variants={messageMotion}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
+            >
+              <LinkS to="me" spy={true} offset={0} duration={500} smooth={true}>
+                <Button>KATSUYA.</Button>
+              </LinkS>
+            </Message>
+
+            <Message
+              variants={shadowMessageMotion}
+              initial="initial"
+              animate="animate"
+              whileHover="whileHoever"
             >
               I AM A PASSIONATE
             </Message>
 
             <Message
-              initial={{ opacity: 0, x: 0, y: 15 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                y: 5,
-                transition: { duration: 3 },
-                scale: 1.1,
-                originX: 0,
-              }}
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 15px rgb(255, 255, 255)",
-                originX: 0,
-              }}
-              transition={{ stiffness: 300 }}
+              variants={messageMotion}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
             >
               <LinkS
                 activeClass="active"
@@ -406,38 +361,20 @@ function Home() {
             </Message>
 
             <Message
-              drag
-              initial={{ opacity: 0.8, x: 0, y: 0 }}
-              animate={{
-                opacity: 0.03,
-                x: 0,
-                y: 5,
-                transition: { duration: 3 },
-              }}
+              variants={shadowMessageMotion}
+              initial="initial"
+              animate="animate"
+              whileHover="whileHoever"
             >
               AND METICULOUS
             </Message>
 
             <Message
-              initial={{ opacity: 0, x: 0, y: 15 }}
-              animate={{
-                x: 0,
-                y: 5,
-                opacity: 1,
-                transition: { duration: 3 },
-                scale: 1.1,
-                originX: 0,
-              }}
-              whileHover={{
-                scale: 1.2,
-                textShadow: "0px 0px 15px rgb(255, 255, 255)",
-                originX: 0,
-              }}
-              transition={{ stiffness: 300 }}
-              // whileTap={{
-              //   scale: 1,
-              //   transition: { duration: 3 },
-              // }}
+              variants={messageMotion}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
             >
               <LinkS
                 activeClass="active"
@@ -556,7 +493,7 @@ function Home() {
         </SectionContainer>
         <SectionContainer id="contact">
           <ContentContainer>
-            <Message>
+            <Message id="contact">
               <ScrollIn duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
                 WAYS TO SAY HI
               </ScrollIn>
@@ -569,7 +506,9 @@ function Home() {
                 hiddenScale={1.3}
                 hover={1.2}
               >
-                <a href="mailto: hello@katsuya.me">EMAIL ME</a>
+                <p onClick={copyEmail}>
+                  {copySuccessMessage} {instructions}
+                </p>
               </ScrollIn>
             </Message>
             <Message
