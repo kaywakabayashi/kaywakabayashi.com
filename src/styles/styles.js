@@ -71,14 +71,14 @@ export const Message = styled(motion.div)`
     font-size: 2.4em;
   }
   @media (min-width: 376px) {
-    font-size: 2.5em;
+    font-size: 2.4em;
   }
 
   @media (min-width: 768px) {
-    font-size: 3.5em;
+    font-size: 3.8em;
   }
   @media (min-width: 1025px) {
-    font-size: 5em;
+    font-size: 4.3em;
   }
 `;
 
