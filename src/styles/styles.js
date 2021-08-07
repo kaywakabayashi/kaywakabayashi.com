@@ -149,7 +149,7 @@ export const RightContainer = styled(motion.div)`
     font-size: 3.5em;
   }
   @media (min-width: 1025px) {
-    font-size: 5em;
+    font-size: 4em;
   }
 `;
 
