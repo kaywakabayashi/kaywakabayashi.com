@@ -12,7 +12,7 @@ const Contact = ({
   const email = "hello@katsuya.me";
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
-    setCopySuccessMessage("Email Copied");
+    setCopySuccessMessage("Email Copied :)");
     setInstructions("");
   };
   return (
