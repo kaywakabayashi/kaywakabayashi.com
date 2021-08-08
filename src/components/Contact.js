@@ -26,11 +26,9 @@ const Contact = ({
         <ScrollInMotion
           hover={1.1}
           y={10}
-          duration={3.5}
+          duration={3}
           hiddenOpacity={0}
-          opacity={0.8}
-          scale={1}
-          hiddenScale={1.2}
+          opacity={1}
         >
           <p onClick={copyEmail}>
             {copySuccessMessage} {instructions}
