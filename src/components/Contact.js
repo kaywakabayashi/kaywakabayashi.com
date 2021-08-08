@@ -23,7 +23,7 @@ const Contact = ({
       } else {
       }
     }, 4000);
-  }, [copySuccessMessage]);
+  }, [copySuccessMessage, setCopySuccessMessage]);
 
   return (
     <>
