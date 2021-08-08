@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Message, Button } from "../styles/styles";
 import "../index.css";
 import ScrollInMotion from "../styles/motions";
@@ -9,12 +9,22 @@ const Contact = ({
   setCopySuccessMessage,
   setInstructions,
 }) => {
-  const email = "hello@katsuya.me";
+  const email = "wakabayashi@ucla.edu";
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopySuccessMessage("Email Copied :)");
     setInstructions("");
   };
+
+  useEffect(() => {
+    setInterval(() => {
+      if (copySuccessMessage === "Email Copied :)") {
+        setCopySuccessMessage("Looking forward to hearing from you!");
+      } else {
+      }
+    }, 4000);
+  }, [copySuccessMessage]);
+
   return (
     <>
       <Message>

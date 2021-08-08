@@ -16,13 +16,6 @@ function Home() {
   const [copySuccessMessage, setCopySuccessMessage] = useState();
   const [instructions, setInstructions] = useState("EMAIL ME");
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setCopySuccessMessage("Looking forward to hearing from you!");
-  //   }, 100000);
-  //   return () => clearTimeout(timer);
-  // }, [copySuccessMessage]);
-
   return (
     <>
       <Container id="container">
