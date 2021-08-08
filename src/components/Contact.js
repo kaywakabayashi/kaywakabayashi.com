@@ -35,7 +35,7 @@ const Contact = ({
       <Message>
         <ScrollInMotion
           hover={1.1}
-          y={10}
+          y={15}
           duration={3}
           hiddenOpacity={0}
           opacity={1}
@@ -66,7 +66,7 @@ const Contact = ({
       <Message>
         <ScrollInMotion
           hover={1.1}
-          y={35}
+          y={30}
           duration={3}
           hiddenOpacity={0}
           opacity={1}
