@@ -31,7 +31,7 @@ const Me = () => {
         <ScrollInMotion duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
           <RightContainer>
             <ProfileName>
-              HI, I'M KATSUYA
+              Hi, I'm Katsuya
               <span style={{ opacity: 0.5 }}>(kah-tzooh-yah)</span>
             </ProfileName>
             <Marquee speed={100}>
