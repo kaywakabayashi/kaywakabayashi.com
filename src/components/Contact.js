@@ -10,19 +10,22 @@ const Contact = ({
   setInstructions,
 }) => {
   const email = "wakabayashi@ucla.edu";
+  const copiedMsg = "Email Copied :)";
+  const thanksMsg = "Looking forward to hearing from you!";
+
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
-    setCopySuccessMessage("Email Copied :)");
+    setCopySuccessMessage(copiedMsg);
     setInstructions("");
   };
 
   useEffect(() => {
     setInterval(() => {
-      if (copySuccessMessage === "Email Copied :)") {
-        setCopySuccessMessage("Looking forward to hearing from you!");
+      if (copySuccessMessage == copiedMsg) {
+        setCopySuccessMessage(thanksMsg);
       } else {
       }
-    }, 4000);
+    }, 2000);
   }, [copySuccessMessage, setCopySuccessMessage]);
 
   return (

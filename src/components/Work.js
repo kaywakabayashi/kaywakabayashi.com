@@ -23,7 +23,7 @@ const Work = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Button>LAWI STUDIOS(NPO)</Button>
+            <Button>LAWI STUDIOS</Button>
           </a>
         </ScrollInMotion>
       </Message>
