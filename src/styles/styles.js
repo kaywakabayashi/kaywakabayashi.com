@@ -60,15 +60,15 @@ export const ContactWrapper = styled(motion.div)`
 
 export const Message = styled(motion.div)`
   color: black;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-right: auto;
   padding: auto;
 
   @media (min-width: 320px) {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   @media (min-width: 360px) {
-    font-size: 2.4em;
+    font-size: 2em;
   }
   @media (min-width: 376px) {
     font-size: 2.4em;

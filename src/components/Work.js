@@ -47,7 +47,7 @@ const Work = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            ETERNAL CARD(NFT)
+            "ETERNAL CARD"(NFT)
           </a>
         </ScrollInMotion>
       </Message>
@@ -65,7 +65,7 @@ const Work = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            EFFICIENTLY APP(React)
+            "EFFICIENTLY APP"(React)
           </a>
         </ScrollInMotion>
       </Message>
@@ -83,7 +83,7 @@ const Work = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            LET'S TRADE(C++)
+            "LET'S TRADE"(C++)
           </a>
         </ScrollInMotion>
       </Message>
@@ -100,7 +100,7 @@ const Work = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            DROP IT!(Music video)
+            "DROP IT!"(Music video)
           </a>
         </ScrollInMotion>
       </Message>
