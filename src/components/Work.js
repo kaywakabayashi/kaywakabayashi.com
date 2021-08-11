@@ -4,7 +4,7 @@ import ScrollInMotion from "../styles/motions";
 import { LanguageContext } from "../contexts/LanguageContext";
 
 const Work = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
   return (
     <>
       <Message>

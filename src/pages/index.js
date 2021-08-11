@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import {
   Container,
   NavContainer,
@@ -11,12 +11,10 @@ import Nav from "../components/Nav";
 import Work from "../components/Work";
 import Me from "../components/Me";
 import Contact from "../components/Contact";
-import { LanguageContext } from "../contexts/LanguageContext";
 
 function Home() {
   const [copySuccessMessage, setCopySuccessMessage] = useState();
   const [instructions, setInstructions] = useState("EMAIL ME");
-  const { language, setLanguage } = useContext(LanguageContext);
 
   return (
     <Container id="container">

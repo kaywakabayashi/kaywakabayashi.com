@@ -22,7 +22,7 @@ const Contact = ({
 
   useEffect(() => {
     setInterval(() => {
-      if (copySuccessMessage == copiedMsg) {
+      if (copySuccessMessage === copiedMsg) {
         setCopySuccessMessage(thanksMsg);
       } else {
       }

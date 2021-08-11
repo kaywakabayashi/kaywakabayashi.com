@@ -17,6 +17,7 @@ const Hero = () => {
     setLangWithDelay("GE", 1000);
     setLangWithDelay("JP", 2300);
     setLangWithDelay("EN", 4500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

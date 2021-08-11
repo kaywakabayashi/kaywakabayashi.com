@@ -6,10 +6,7 @@ import {
 } from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
 import { contactMotion } from "../styles/motions";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "../contexts/LanguageContext";
-import { NavLink } from "react-router-dom";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 const Nav = () => {
   const { language, setLanguage } = useContext(LanguageContext);
