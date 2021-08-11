@@ -15,9 +15,9 @@ export const shadowMessageMotion = {
 export const messageMotion = {
   initial: { opacity: 0, y: 15 },
   animate: {
-    opacity: 1,
-    y: 5,
-    transition: { duration: 1 },
+    opacity: [0, 1],
+    y: [25, 0, 10],
+    transition: { duration: 7, times: [0, 0.5, 1] },
     scale: 1.1,
     originX: 0,
   },
