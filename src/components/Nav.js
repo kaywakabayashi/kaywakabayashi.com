@@ -15,7 +15,7 @@ const Nav = () => {
       <LanguageSelectorContainer>
         <Button onClick={() => setLanguage("EN")}>
           {language === "EN" ? (
-            <span style={{ opacity: 1 }}>EN</span>
+            <span style={{ opacity: 1, fontWeight: "bold" }}>EN</span>
           ) : (
             <span style={{ opacity: 0.5 }}>EN</span>
           )}
@@ -23,7 +23,7 @@ const Nav = () => {
         <span>/</span>
         <Button onClick={() => setLanguage("GE")}>
           {language === "GE" ? (
-            <span style={{ opacity: 1 }}>DE</span>
+            <span style={{ opacity: 1, fontWeight: "bold" }}>DE</span>
           ) : (
             <span style={{ opacity: 0.5 }}>DE</span>
           )}
@@ -31,7 +31,7 @@ const Nav = () => {
         <span>/</span>
         <Button onClick={() => setLanguage("JP")}>
           {language === "JP" ? (
-            <span style={{ opacity: 1 }}>日本語</span>
+            <span style={{ opacity: 1, fontWeight: "bold" }}>日本語</span>
           ) : (
             <span style={{ opacity: 0.5 }}>日本語</span>
           )}
