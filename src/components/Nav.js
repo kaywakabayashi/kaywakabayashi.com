@@ -57,7 +57,9 @@ const Nav = () => {
         >
           <Button>{language === "EN" && <span>Contact</span>}</Button>
           <Button>
-            {language === "GE" && <span>Kontaktmöglichkeiten </span>}
+            {language === "GE" && (
+              <span style={{ fontSize: "0.7em" }}>Kontaktmöglichkeiten </span>
+            )}
           </Button>
           <Button>{language === "JP" && <span>コンタクト</span>}</Button>
         </LinkS>
