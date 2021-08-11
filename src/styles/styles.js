@@ -96,28 +96,6 @@ export const Button = styled(motion.button)`
   margin: auto;
   text-align: left;
 `;
-export const SectionTitle = styled(motion.div)`
-  color: black;
-  font-size: 1.9em;
-
-  margin-bottom: 1rem;
-  @media (min-width: 320px) {
-    font-size: 1.8em;
-  }
-  @media (min-width: 360px) {
-    font-size: 2.5em;
-  }
-  @media (min-width: 481px) {
-    font-size: 2.5em;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 3.5em;
-  }
-  @media (min-width: 1025px) {
-    font-size: 4em;
-  }
-`;
 
 export const RowContainer = styled(motion.div)`
   display: flex;
