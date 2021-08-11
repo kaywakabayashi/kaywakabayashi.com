@@ -34,9 +34,9 @@ export const contactMotion = {
   initial: { opacity: 0, x: 200 },
   animate: {
     opacity: 0.5,
-    x: 0,
+    x: [250, 250, 0],
     y: 5,
-    transition: { duration: 3 },
+    transition: { duration: 10, times: [0, 0.6, 1] },
   },
   whileHover: { scale: 1.05, opacity: 1 },
 };
