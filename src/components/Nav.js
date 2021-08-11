@@ -59,7 +59,7 @@ const Nav = () => {
           <Button>
             {language === "GE" && <span>Kontaktmöglichkeiten </span>}
           </Button>
-          <Button>{language === "GE" && <span>コンタクト</span>}</Button>
+          <Button>{language === "JP" && <span>コンタクト</span>}</Button>
         </LinkS>
       </ContactWrapper>
     </>
