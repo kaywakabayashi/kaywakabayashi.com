@@ -18,7 +18,7 @@ export const SectionContainer = styled(motion.div)`
   overflow-y: hidden;
   overflow-x: hidden;
   height: 100%;
-  padding: 0 1.5rem;
+  //padding: 0 1.5rem;
 `;
 
 export const NavContainer = styled.div`
