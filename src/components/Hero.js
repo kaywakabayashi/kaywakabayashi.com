@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Message, Button } from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
 import { shadowMessageMotion, messageMotion } from "../styles/motions";
@@ -6,6 +6,19 @@ import { LanguageContext } from "../contexts/LanguageContext";
 
 const Hero = () => {
   const { language, setLanguage } = useContext(LanguageContext);
+
+  const setLangWithDelay = (la, delay) => {
+    setTimeout(() => {
+      setLanguage(la);
+    }, delay);
+  };
+
+  useEffect(() => {
+    setLangWithDelay("GE", 1000);
+    setLangWithDelay("JP", 2300);
+    setLangWithDelay("EN", 4500);
+  }, []);
+
   return (
     <>
       <Message

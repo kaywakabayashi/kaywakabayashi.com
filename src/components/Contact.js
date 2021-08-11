@@ -29,7 +29,7 @@ const Contact = ({
     }, 2000);
   }, [copySuccessMessage, setCopySuccessMessage]);
 
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   return (
     <>
