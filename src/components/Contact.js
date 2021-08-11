@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Message, Button } from "../styles/styles";
 import "../index.css";
 import ScrollInMotion from "../styles/motions";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 const Contact = ({
   copySuccessMessage,
@@ -28,11 +29,14 @@ const Contact = ({
     }, 2000);
   }, [copySuccessMessage, setCopySuccessMessage]);
 
+  const { language, setLanguage } = useContext(LanguageContext);
+
   return (
     <>
       <Message>
         <ScrollInMotion duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
-          WAYS TO SAY HI
+          {language === "EN" && <span> WAYS TO SAY HI </span>}
+          {language === "GE" && <span>SCHAU VORBEI!</span>}
         </ScrollInMotion>
       </Message>
       <Message>

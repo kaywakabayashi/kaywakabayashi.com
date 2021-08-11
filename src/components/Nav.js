@@ -1,11 +1,37 @@
-import React from "react";
-import { ContactWrapper, Button } from "../styles/styles";
+import React, { useContext } from "react";
+import {
+  ContactWrapper,
+  Button,
+  LanguageSelectorContainer,
+} from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
 import { contactMotion } from "../styles/motions";
+import LanguageContextProvider, {
+  LanguageContext,
+} from "../contexts/LanguageContext";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
   return (
     <>
+      <LanguageSelectorContainer>
+        <Button onClick={() => setLanguage("EN")}>
+          {language === "EN" ? (
+            <span style={{ opacity: 1 }}>EN</span>
+          ) : (
+            <span style={{ opacity: 0.5 }}>EN</span>
+          )}
+        </Button>
+        <span>/</span>
+        <Button onClick={() => setLanguage("GE")}>
+          {language === "GE" ? (
+            <span style={{ opacity: 1 }}>GE</span>
+          ) : (
+            <span style={{ opacity: 0.5 }}>GE</span>
+          )}
+        </Button>
+      </LanguageSelectorContainer>
       <ContactWrapper
         variants={contactMotion}
         initial="initial"
@@ -21,7 +47,10 @@ const Nav = () => {
           duration={500}
           smooth={true}
         >
-          <Button>CONTACT</Button>
+          <Button>{language === "EN" && <span>Contact</span>}</Button>
+          <Button>
+            {language === "GE" && <span>Kontaktmöglichkeiten </span>}
+          </Button>
         </LinkS>
       </ContactWrapper>
     </>

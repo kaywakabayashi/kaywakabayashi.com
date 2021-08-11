@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Message, Button } from "../styles/styles";
 import { Link as LinkS } from "react-scroll";
 import { shadowMessageMotion, messageMotion } from "../styles/motions";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 const Hero = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
   return (
     <>
       <Message
@@ -13,7 +15,8 @@ const Hero = () => {
         transition="transition"
         whileHover="whileHover"
       >
-        HELLO, I AM
+        {language === "EN" && <span>HELLO, I AM</span>}
+        {language === "GE" && <span>HALLO. ICH HEIßE</span>}
       </Message>
 
       <Message
@@ -34,7 +37,8 @@ const Hero = () => {
         animate="animate"
         whileHover="whileHoever"
       >
-        I AM A PASSIONATE
+        {language === "EN" && <span>I AM A PASSIONATE</span>}
+        {language === "GE" && <span>ICH BIN EIN LEIDENSCHAFTLICHER</span>}
       </Message>
 
       <Message
@@ -52,7 +56,10 @@ const Hero = () => {
           duration={500}
           smooth={true}
         >
-          <Button>FRONT-END DEVELOPER</Button>
+          <Button>
+            {language === "EN" && <span>FRONT-END DEVELOPER</span>}
+            {language === "GE" && <span>FRONT-END ENTWICKLER</span>}
+          </Button>
         </LinkS>
       </Message>
 
@@ -62,7 +69,8 @@ const Hero = () => {
         animate="animate"
         whileHover="whileHoever"
       >
-        AND METICULOUS
+        {language === "EN" && <span>AND METICULOUS</span>}
+        {language === "GE" && <span>UND AKRIBISCHER</span>}
       </Message>
 
       <Message
@@ -80,7 +88,10 @@ const Hero = () => {
           smooth={true}
           duration={500}
         >
-          <Button>UI/UX DESIGNER.</Button>
+          <Button>
+            {language === "EN" && <span> UI/UX DESIGNER.</span>}
+            {language === "GE" && <span>UI/UX DESIGNER. </span>}
+          </Button>
         </LinkS>
       </Message>
     </>

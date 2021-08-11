@@ -39,6 +39,14 @@ export const ContentContainer = styled(motion.div)`
   padding: 2rem 0 0 0;
 `;
 
+export const LanguageSelectorContainer = styled.div`
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  display: flex;
+  magrin: 1rem;
+`;
+
 export const ContactWrapper = styled(motion.div)`
   color: black;
   font-size: 1em;

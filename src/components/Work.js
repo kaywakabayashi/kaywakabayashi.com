@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Message, Button } from "../styles/styles";
 import ScrollInMotion from "../styles/motions";
+import { LanguageContext } from "../contexts/LanguageContext";
 
 const Work = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
   return (
     <>
       <Message>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={0.5}>
-          Work
+          {language === "EN" && <span>Work </span>}
+          {language === "GE" && <span>Arbeit</span>}
         </ScrollInMotion>
       </Message>
       <Message>
@@ -30,7 +33,8 @@ const Work = () => {
 
       <Message>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={0.5}>
-          PROJECTS
+          {language === "EN" && <span>PROJECTS </span>}
+          {language === "GE" && <span>PROJEKTE</span>}
         </ScrollInMotion>
       </Message>
 
