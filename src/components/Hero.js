@@ -17,7 +17,7 @@ const Hero = () => {
       >
         {language === "EN" && <span>HELLO, I AM</span>}
         {language === "GE" && <span>HALLO. ICH HEIßE</span>}
-        {language === "JP" && <span>こんにちは、わたしは</span>}
+        {language === "JP" && <span>ようこそ、わたしは</span>}
       </Message>
 
       <Message
@@ -93,7 +93,7 @@ const Hero = () => {
           duration={500}
         >
           <Button>
-            {language === "EN" && <span> UI/UX DESIGNER.</span>}
+            {language === "EN" && <span>UI/UX DESIGNER.</span>}
             {language === "GE" && <span>UI/UX DESIGNER. </span>}
             {language === "JP" && <span>UI/UX デザイナーです. </span>}
           </Button>

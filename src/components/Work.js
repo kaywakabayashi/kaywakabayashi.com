@@ -34,8 +34,8 @@ const Work = () => {
 
       <Message>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={0.5}>
-          {language === "EN" && <span>PROJECTS </span>}
-          {language === "GE" && <span>PROJEKTE</span>}
+          {language === "EN" && <span>Projects </span>}
+          {language === "GE" && <span>Projekte</span>}
           {language === "JP" && <span>プロジェクト</span>}
         </ScrollInMotion>
       </Message>

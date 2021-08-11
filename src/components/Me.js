@@ -15,12 +15,14 @@ import ScrollInMotion from "../styles/motions";
 import { LanguageContext } from "../contexts/LanguageContext";
 
 const Me = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
   return (
     <>
       <SectionTitle>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
-          Me
+          {language === "EN" && <span> Me</span>}
+          {language === "GE" && <span> Profil</span>}
+          {language === "JP" && <span> プロファイル</span>}
         </ScrollInMotion>
       </SectionTitle>
       <RowContainer>
@@ -37,16 +39,16 @@ const Me = () => {
               {language === "GE" && <span> Hi. Ich bin Katsuya</span>}
               {language === "JP" && <span> こんにちは, Katsuyaです</span>}
 
-              <span style={{ opacity: 0.5 }}>(kah-tzooh-yah)</span>
+              <span style={{ opacity: 0.5 }}>(kah-tzooh-yah).</span>
             </ProfileName>
             <Marquee speed={100}>
               <p>
                 {language === "EN" && <span> Love working with creators.</span>}
                 {language === "GE" && (
-                  <span>ICH ARBEITE GERN MIT KREATIVEN MENSCHEN ZUSAMMEN.</span>
+                  <span>Ich arbeite gern mit kreativen menschen zusammen.</span>
                 )}
                 {language === "JP" && (
-                  <span>クリエイターはわたしの戦友です</span>
+                  <span>クリエイターはわたしの戦友です.</span>
                 )}
 
                 <span className="px-2" />
@@ -62,7 +64,7 @@ const Me = () => {
                 </span>{" "}
                 {language === "EN" && <span> etc. </span>}
                 {language === "GE" && <span>und weiteren. </span>}
-                {language === "JP" && <span>+</span>}
+                {language === "JP" && <span>etc. </span>}
                 <span className="px-2" />
               </p>
             </Marquee>
@@ -82,7 +84,7 @@ const Me = () => {
                 )}
                 {language === "JP" && (
                   <span>
-                    現在はカリフォルニア大学ロサンゼルス校の学生
+                    カリフォルニア大学ロサンゼルス校在籍
                     <span className="font-bold">(UCLA).</span>{" "}
                   </span>
                 )}
