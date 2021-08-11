@@ -37,6 +37,7 @@ const Contact = ({
         <ScrollInMotion duration={2} x={-200} hiddenOpacity={1} opacity={0.2}>
           {language === "EN" && <span> WAYS TO SAY HI </span>}
           {language === "GE" && <span>SCHAU VORBEI!</span>}
+          {language === "JP" && <span>連絡手段</span>}
         </ScrollInMotion>
       </Message>
       <Message>

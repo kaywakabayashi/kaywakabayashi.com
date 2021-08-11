@@ -17,6 +17,7 @@ const Hero = () => {
       >
         {language === "EN" && <span>HELLO, I AM</span>}
         {language === "GE" && <span>HALLO. ICH HEIßE</span>}
+        {language === "JP" && <span>こんにちは、わたしは</span>}
       </Message>
 
       <Message
@@ -39,6 +40,7 @@ const Hero = () => {
       >
         {language === "EN" && <span>I AM A PASSIONATE</span>}
         {language === "GE" && <span>ICH BIN EIN LEIDENSCHAFTLICHER</span>}
+        {language === "JP" && <span>わたしは情熱的な</span>}
       </Message>
 
       <Message
@@ -59,6 +61,7 @@ const Hero = () => {
           <Button>
             {language === "EN" && <span>FRONT-END DEVELOPER</span>}
             {language === "GE" && <span>FRONT-END ENTWICKLER</span>}
+            {language === "JP" && <span>エンジニアであり</span>}
           </Button>
         </LinkS>
       </Message>
@@ -71,6 +74,7 @@ const Hero = () => {
       >
         {language === "EN" && <span>AND METICULOUS</span>}
         {language === "GE" && <span>UND AKRIBISCHER</span>}
+        {language === "JP" && <span>神は細部に宿ると信じる</span>}
       </Message>
 
       <Message
@@ -91,6 +95,7 @@ const Hero = () => {
           <Button>
             {language === "EN" && <span> UI/UX DESIGNER.</span>}
             {language === "GE" && <span>UI/UX DESIGNER. </span>}
+            {language === "JP" && <span>UI/UX デザイナーです. </span>}
           </Button>
         </LinkS>
       </Message>

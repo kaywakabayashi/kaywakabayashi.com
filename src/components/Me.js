@@ -33,7 +33,10 @@ const Me = () => {
         <ScrollInMotion duration={2} x={100} hiddenOpacity={0.1} opacity={1}>
           <RightContainer>
             <ProfileName>
-              Hi, I'm Katsuya
+              {language === "EN" && <span> Hi, I'm Katsuya</span>}
+              {language === "GE" && <span> Hi. Ich bin Katsuya</span>}
+              {language === "JP" && <span> こんにちは, Katsuyaです</span>}
+
               <span style={{ opacity: 0.5 }}>(kah-tzooh-yah)</span>
             </ProfileName>
             <Marquee speed={100}>
@@ -42,7 +45,10 @@ const Me = () => {
                 {language === "GE" && (
                   <span>ICH ARBEITE GERN MIT KREATIVEN MENSCHEN ZUSAMMEN.</span>
                 )}
-                Erfahren in React.js, React Native, Javascript und weiteren.
+                {language === "JP" && (
+                  <span>クリエイターはわたしの戦友です</span>
+                )}
+
                 <span className="px-2" />
               </p>
             </Marquee>
@@ -50,11 +56,13 @@ const Me = () => {
               <p>
                 {language === "EN" && <span> Skilled in </span>}
                 {language === "GE" && <span>Erfahren in</span>}
+                {language === "JP" && <span>スキル:</span>}
                 <span className="font-bold">
                   React.js, React Native, JavaScript, C++, Python
                 </span>{" "}
                 {language === "EN" && <span> etc. </span>}
                 {language === "GE" && <span>und weiteren. </span>}
+                {language === "JP" && <span>+</span>}
                 <span className="px-2" />
               </p>
             </Marquee>
@@ -69,7 +77,13 @@ const Me = () => {
                 {language === "GE" && (
                   <span>
                     Student an der University of California
-                    <span className="font-bold">UCLA.</span>{" "}
+                    <span className="font-bold">(UCLA).</span>{" "}
+                  </span>
+                )}
+                {language === "JP" && (
+                  <span>
+                    現在はカリフォルニア大学ロサンゼルス校の学生
+                    <span className="font-bold">(UCLA).</span>{" "}
                   </span>
                 )}
 
