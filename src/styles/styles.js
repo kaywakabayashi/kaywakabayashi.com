@@ -69,7 +69,7 @@ export const ContactWrapper = styled(motion.div)`
 export const Message = styled(motion.div)`
   color: black;
   font-size: 1.5em;
-  margin-right: auto;
+  margin-left: 0.5rem;
   padding: auto;
 
   @media (min-width: 320px) {
@@ -99,6 +99,7 @@ export const Button = styled(motion.button)`
 export const SectionTitle = styled(motion.div)`
   color: black;
   font-size: 1.9em;
+
   margin-bottom: 1rem;
   @media (min-width: 320px) {
     font-size: 1.8em;

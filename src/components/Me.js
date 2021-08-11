@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
 import {
-  SectionTitle,
   RowContainer,
   ProfileName,
   LeftContainer,
   RightContainer,
   Image,
+  Message,
 } from "../styles/styles";
 import Cover from "../img/katsuya.jpg";
 import "../index.css";
@@ -18,13 +18,13 @@ const Me = () => {
   const { language } = useContext(LanguageContext);
   return (
     <>
-      <SectionTitle>
+      <Message>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
           {language === "EN" && <span> Me</span>}
           {language === "GE" && <span> Profil</span>}
           {language === "JP" && <span> プロファイル</span>}
         </ScrollInMotion>
-      </SectionTitle>
+      </Message>
       <RowContainer>
         <ScrollInMotion duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
           <LeftContainer>
