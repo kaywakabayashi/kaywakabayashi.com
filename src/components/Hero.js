@@ -73,8 +73,8 @@ const Hero = () => {
           smooth={true}
         >
           <Button>
-            {language === "EN" && <span>FRONT-END DEVELOPER</span>}
-            {language === "GE" && <span>FRONT-END ENTWICKLER</span>}
+            {language === "EN" && <span>DEVELOPER</span>}
+            {language === "GE" && <span>ENTWICKLER</span>}
             {language === "JP" && <span>エンジニアであり</span>}
           </Button>
         </LinkS>
