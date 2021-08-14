@@ -62,7 +62,7 @@ const Contact = ({
           opacity={1}
         >
           <a
-            href="https://github.com/katsuyaw"
+            href="https://github.com/katsuyawakabayashi"
             rel="noopener noreferrer"
             target="_blank"
           >
