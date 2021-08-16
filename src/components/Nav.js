@@ -11,7 +11,7 @@ import { LanguageContext } from "../contexts/LanguageContext";
 const Nav = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   return (
-    <>
+    <nav>
       <LanguageSelectorContainer>
         <Button onClick={() => setLanguage("EN")}>
           {language === "EN" ? (
@@ -52,16 +52,16 @@ const Nav = () => {
           duration={500}
           smooth={true}
         >
-          <Button>{language === "EN" && <span>Contact</span>}</Button>
           <Button>
+            {language === "EN" && <span>Contact</span>}{" "}
             {language === "GE" && (
               <span style={{ fontSize: "0.7em" }}>Kontaktmöglichkeiten </span>
             )}
+            {language === "JP" && <span>コンタクト</span>}
           </Button>
-          <Button>{language === "JP" && <span>コンタクト</span>}</Button>
         </LinkS>
       </ContactWrapper>
-    </>
+    </nav>
   );
 };
 

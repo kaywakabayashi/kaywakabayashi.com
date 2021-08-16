@@ -22,24 +22,27 @@ function Home() {
         <NavContainer id="nav">
           <Nav />
         </NavContainer>
+
         <MainContainer id="hero">
           <Hero />
         </MainContainer>
       </SectionContainer>
-      <SectionContainer id="work">
-        <Work />
-      </SectionContainer>
-      <SectionContainer id="me">
-        <Me />
-      </SectionContainer>
-      <SectionContainer id="contact">
-        <Contact
-          copySuccessMessage={copySuccessMessage}
-          instructions={instructions}
-          setCopySuccessMessage={setCopySuccessMessage}
-          setInstructions={setInstructions}
-        />
-      </SectionContainer>
+      <main>
+        <SectionContainer id="work">
+          <Work />
+        </SectionContainer>
+        <SectionContainer id="me">
+          <Me />
+        </SectionContainer>
+        <SectionContainer id="contact">
+          <Contact
+            copySuccessMessage={copySuccessMessage}
+            instructions={instructions}
+            setCopySuccessMessage={setCopySuccessMessage}
+            setInstructions={setInstructions}
+          />
+        </SectionContainer>
+      </main>
     </Container>
   );
 }

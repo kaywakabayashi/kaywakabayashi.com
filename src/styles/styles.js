@@ -44,7 +44,8 @@ export const LanguageSelectorContainer = styled.div`
   left: 0.5rem;
   top: 0.5rem;
   display: flex;
-  magrin: 1rem;
+  display: flex;
+  width: 8rem;
 `;
 
 export const ContactWrapper = styled(motion.div)`
@@ -67,6 +68,30 @@ export const ContactWrapper = styled(motion.div)`
 `;
 
 export const Message = styled(motion.div)`
+  color: black;
+  font-size: 1.5em;
+  margin-left: 0.5rem;
+  padding: auto;
+
+  @media (min-width: 320px) {
+    font-size: 1.8em;
+  }
+  @media (min-width: 360px) {
+    font-size: 2em;
+  }
+  @media (min-width: 376px) {
+    font-size: 2.4em;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 3.8em;
+  }
+  @media (min-width: 1025px) {
+    font-size: 4.3em;
+  }
+`;
+
+export const Header = styled(motion.header)`
   color: black;
   font-size: 1.5em;
   margin-left: 0.5rem;
@@ -142,7 +167,5 @@ export const RightContainer = styled(motion.div)`
 
 export const Image = styled(motion.img)`
   object-fit: cover;
-  height: 15rem;
-  width: auto;
   margin: auto;
 `;

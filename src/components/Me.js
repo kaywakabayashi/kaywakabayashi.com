@@ -7,6 +7,7 @@ import {
   RightContainer,
   Image,
   Message,
+  Header,
 } from "../styles/styles";
 import Cover from "../img/katsuya.jpg";
 import "../index.css";
@@ -18,17 +19,21 @@ const Me = () => {
   const { language } = useContext(LanguageContext);
   return (
     <>
-      <Message>
+      <Header>
         <ScrollInMotion duration={2} x={-100} hiddenOpacity={1} opacity={0.2}>
           {language === "EN" && <span> Me</span>}
           {language === "GE" && <span> Profil</span>}
           {language === "JP" && <span> プロファイル</span>}
         </ScrollInMotion>
-      </Message>
+      </Header>
       <RowContainer>
         <ScrollInMotion duration={1.5} x={-100} hiddenOpacity={0} opacity={0.7}>
           <LeftContainer>
-            <Image src={Cover} />
+            <Image
+              src={Cover}
+              alt="portrait"
+              style={{ height: "15rem", width: "auto" }}
+            />
           </LeftContainer>
         </ScrollInMotion>
 
