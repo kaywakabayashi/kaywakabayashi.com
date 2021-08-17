@@ -34,15 +34,15 @@ function Home() {
         <SectionContainer id="me">
           <Me />
         </SectionContainer>
-        <SectionContainer id="contact">
-          <Contact
-            copySuccessMessage={copySuccessMessage}
-            instructions={instructions}
-            setCopySuccessMessage={setCopySuccessMessage}
-            setInstructions={setInstructions}
-          />
-        </SectionContainer>
       </main>
+      <SectionContainer id="contact">
+        <Contact
+          copySuccessMessage={copySuccessMessage}
+          instructions={instructions}
+          setCopySuccessMessage={setCopySuccessMessage}
+          setInstructions={setInstructions}
+        />
+      </SectionContainer>
     </Container>
   );
 }
