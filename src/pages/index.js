@@ -11,6 +11,7 @@ import Nav from "../components/Nav";
 import Work from "../components/Work";
 import Me from "../components/Me";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Home() {
   const [copySuccessMessage, setCopySuccessMessage] = useState();
@@ -20,21 +21,25 @@ function Home() {
     <Container id="container">
       <SectionContainer>
         <NavContainer id="nav">
-          <Nav />
+          <nav>
+            <Nav />
+          </nav>
         </NavContainer>
 
         <MainContainer id="hero">
           <Hero />
         </MainContainer>
       </SectionContainer>
-      <main>
-        <SectionContainer id="work">
+
+      <SectionContainer id="work">
+        <main>
           <Work />
-        </SectionContainer>
-        <SectionContainer id="me">
-          <Me />
-        </SectionContainer>
-      </main>
+        </main>
+      </SectionContainer>
+      <SectionContainer id="me">
+        <Me />
+      </SectionContainer>
+
       <SectionContainer id="contact">
         <Contact
           copySuccessMessage={copySuccessMessage}
@@ -43,6 +48,9 @@ function Home() {
           setInstructions={setInstructions}
         />
       </SectionContainer>
+      <footer>
+        <Footer />
+      </footer>
     </Container>
   );
 }

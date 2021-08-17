@@ -6,7 +6,6 @@ import {
   LeftContainer,
   RightContainer,
   Image,
-  Message,
   Header,
 } from "../styles/styles";
 import Cover from "../img/katsuya.jpg";

@@ -11,7 +11,7 @@ import { LanguageContext } from "../contexts/LanguageContext";
 const Nav = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   return (
-    <nav>
+    <>
       <LanguageSelectorContainer>
         <Button onClick={() => setLanguage("EN")}>
           {language === "EN" ? (
@@ -61,7 +61,7 @@ const Nav = () => {
           </Button>
         </LinkS>
       </ContactWrapper>
-    </nav>
+    </>
   );
 };
 
