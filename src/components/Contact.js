@@ -88,6 +88,23 @@ const Contact = ({
           </a>
         </ScrollInMotion>
       </Message>
+      <Message>
+        <ScrollInMotion
+          hover={1.1}
+          y={40}
+          duration={3}
+          hiddenOpacity={0}
+          opacity={1}
+        >
+          <a
+            href="https://ucla.box.com/v/katsuyawakabayashi"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Button>RESUME</Button>
+          </a>
+        </ScrollInMotion>
+      </Message>
     </>
   );
 };
