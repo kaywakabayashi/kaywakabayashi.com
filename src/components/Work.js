@@ -93,7 +93,7 @@ const Work = () => {
           </a>
         </ScrollInMotion>
       </Message>
-      <Message>
+      {/* <Message>
         <ScrollInMotion
           hover={1.1}
           y={35}
@@ -109,7 +109,7 @@ const Work = () => {
             "DROP IT!"(Music video)
           </a>
         </ScrollInMotion>
-      </Message>
+      </Message> */}
     </>
   );
 };
