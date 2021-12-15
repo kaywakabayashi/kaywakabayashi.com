@@ -43,7 +43,7 @@ const Me = () => {
               {language === "GE" && <span> Hi. Ich bin Katsuya</span>}
               {language === "JP" && <span> こんにちは, Katsuyaです</span>}
 
-              <span style={{ opacity: 0.5 }}>(kah-tzooh-yah).</span>
+              <span style={{ opacity: 0.5 }}>(kah-tzooh-yah [katsɰja]).</span>
             </ProfileName>
             <Marquee speed={100}>
               <p>
