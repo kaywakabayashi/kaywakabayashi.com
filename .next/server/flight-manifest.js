@@ -1,5 +1,31 @@
 self.__RSC_MANIFEST={
   "__ssr_module_mapping__": {
+    "(app-client)/./app/page.tsx": {
+      "": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "*",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "default",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./node_modules/next/dist/client/components/app-router.js": {
       "": {
         "id": "(sc_client)/./node_modules/next/dist/client/components/app-router.js",
@@ -106,7 +132,58 @@ self.__RSC_MANIFEST={
     }
   },
   "__edge_ssr_module_mapping__": {},
-  "__entry_css_files__": {},
+  "__entry_css_files__": {
+    "/Users/kw/Dev/portfolio/app/page": [
+      "static/css/app/page.css"
+    ],
+    "/Users/kw/Dev/portfolio/app/layout": [
+      "static/css/_app-client_app_globals_css.css"
+    ]
+  },
+  "/Users/kw/Dev/portfolio/styles/Home.modules.scss": {
+    "default": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/page.css"
+      ]
+    }
+  },
+  "/Users/kw/Dev/portfolio/node_modules/@next/font/google/target.css?{\"path\":\"app/page.tsx\",\"import\":\"Amiri\",\"arguments\":[{\"weight\":\"400\",\"subsets\":[\"latin\"]}],\"variableName\":\"amiri\"}": {
+    "default": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/page.css"
+      ]
+    }
+  },
+  "/Users/kw/Dev/portfolio/app/page.tsx": {
+    "": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "default",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    }
+  },
   "/Users/kw/Dev/portfolio/node_modules/next/dist/client/components/app-router.js": {
     "": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
@@ -313,6 +390,15 @@ self.__RSC_MANIFEST={
         "app-client-internals:app-client-internals"
       ],
       "async": false
+    }
+  },
+  "/Users/kw/Dev/portfolio/app/globals.css": {
+    "default": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/_app-client_app_globals_css.css"
+      ]
     }
   }
 }
