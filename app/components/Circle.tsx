@@ -25,9 +25,9 @@ const Circle = () => {
           className="animate-pulse fill-current text-stone-700 text-4xl"
         >
           <textPath href="#textPath" startOffset="50%" letterSpacing="50">
-            <Link href="/about"> about </Link>
-            <Link href="/projects"> projects </Link>
-            <Link href="/contact"> contact </Link>
+            <Link href="#about"> about </Link>
+            <Link href="#experience"> experience </Link>
+            <Link href="#contact"> contact </Link>
           </textPath>
         </text>
       </svg>

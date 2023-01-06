@@ -3,6 +3,8 @@ import "../styles/Home.modules.scss";
 import { Amiri } from "@next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
+import Link from "next/link";
+import HomeDescription from "./components/HomeDescription";
 const amiri = Amiri({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
@@ -14,11 +16,49 @@ export default function Home() {
         </div>
         <div className="sticky top-4 text-5xl">kw</div>
       </section>
-      <section className="flex items-center justify-center h-screen">
-        <h1 className="sticky top-5 text-9xl font-bold">About</h1>
+      <section>
+        <HomeDescription title="Hello" />
       </section>
-      <section className="flex items-center justify-center h-screen"></section>
-      <section className="flex items-center justify-center h-screen"></section>
+      <section>
+        <HomeDescription
+          title="I am..."
+          body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          voluptas inventore quis dolores iusto incidunt autem totam esse
+          eligendi, itaque aspernatur dolor, saepe unde ut quaerat dignissimos,
+          temporibus ipsum error."
+        />
+      </section>
+      <section>
+        <HomeDescription
+          title="I've done..."
+          body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          voluptas inventore quis dolores iusto incidunt autem totam esse
+          eligendi, itaque aspernatur dolor, saepe unde ut quaerat dignissimos,
+          temporibus ipsum error."
+        />
+      </section>
+
+      <section className="flex flex-col justify-center items-center gap-10 h-screen text-center">
+        <h1 className="sticky top-0 text-9xl font-bold pt-10" id="contact">
+          Let's talk
+        </h1>
+      </section>
+      <section className="px-10">
+        <h2 className="font-bold p-10 leading-normal">
+          <p className="text-center">
+            <Link href="mailto:katsuya@wakabayashi.com">
+              katsuya@wakabayashi.com
+            </Link>
+          </p>
+          <p className="text-center">
+            <Link href="https://linkedin.com/in/katsuyawakabayashi">
+              Linkedin
+            </Link>
+            /<Link href="https://github.com/katsuyawakabayashi">GitHub</Link>/
+            <Link href="https://github.com/katsuyawakabayashi">Resume</Link>
+          </p>
+        </h2>
+      </section>
 
       <Footer />
     </main>
