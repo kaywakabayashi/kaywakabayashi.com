@@ -3,13 +3,14 @@ import React from "react";
 interface DescriptionData {
   title: string;
   body?: string;
+  id?: string;
 }
 
-const HomeDescription = ({ title, body }: DescriptionData) => {
+const HomeDescription = ({ title, body, id }: DescriptionData) => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center gap-10 h-screen text-center">
-        <h1 className="sticky top-0 text-9xl font-bold pt-20" id="about">
+        <h1 className="sticky top-0 text-9xl font-bold pt-20" id={id}>
           {title}
         </h1>
       </div>

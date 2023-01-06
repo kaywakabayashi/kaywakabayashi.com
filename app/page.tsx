@@ -26,6 +26,7 @@ export default function Home() {
           voluptas inventore quis dolores iusto incidunt autem totam esse
           eligendi, itaque aspernatur dolor, saepe unde ut quaerat dignissimos,
           temporibus ipsum error."
+          id="about"
         />
       </section>
       <section>
@@ -35,6 +36,7 @@ export default function Home() {
           voluptas inventore quis dolores iusto incidunt autem totam esse
           eligendi, itaque aspernatur dolor, saepe unde ut quaerat dignissimos,
           temporibus ipsum error."
+          id="experience"
         />
       </section>
 
