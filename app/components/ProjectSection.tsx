@@ -21,7 +21,7 @@ export default function ProjectSection({
         rel="noopener noreferrer"
         className="z-50 relative"
       >
-        <div className="h-screen w-screen flex flex-col justify-center items-center relative font-bold leading-normal group text-center ">
+        <div className="h-screen w-screen flex flex-col justify-center items-center relative font-bold leading-normal group text-center px-10">
           <h2 className="py-10 text-3xl sm:text-7xl leading-loostext-center">
             {title}
           </h2>

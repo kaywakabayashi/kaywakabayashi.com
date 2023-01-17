@@ -39,7 +39,7 @@ export default function Circle() {
             fill="transparent"
           />
         </defs>
-        <text x="0" y="0" textAnchor="middle" className=" fill-current text-xl">
+        <text x="0" y="0" textAnchor="middle" className="fill-current text-xl">
           <textPath href="#textPath" startOffset="50%" letterSpacing="20">
             <tspan className="opacity-40">
               {" "}
@@ -48,8 +48,9 @@ export default function Circle() {
                 timeZoneName: "short",
                 weekday: "short",
                 // year: "numeric",
+                hour: "numeric",
                 month: "short",
-                day: "numeric",
+                day: "2-digit",
               })}{" "}
               - Los Angeles CA -{" "}
             </tspan>
@@ -58,7 +59,7 @@ export default function Circle() {
               onClick={() => toggleTheme()}
               className="animate-pulse opacity-100 hover:cursor-pointer"
             >
-              {theme == "light" ? "too bright?" : "too dark?"}
+              {theme == "light" ? "too bright?" : "need light?"}
             </tspan>
           </textPath>
         </text>

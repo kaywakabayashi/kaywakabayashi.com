@@ -17,10 +17,10 @@ export default function ContactSection({
 }) {
   return (
     <div className="relative  h-screen text-center w-full">
-      <div className="absolute top-40 text-6xl sm:text-[14rem] font-bold w-full l-0">
+      <div className="absolute top-40 text-6xl sm:text-[13rem] font-bold w-full l-0">
         {title}
       </div>
-      <div className="absolute bottom-12 font-bold text-2xl sm:text-5xl w-full l-0 space-y-10">
+      <div className="absolute bottom-44 font-bold text-xl sm:text-5xl w-full l-0 space-y-10">
         <p>
           <Link href={`tel:${phone}`}>{phone}</Link>
         </p>

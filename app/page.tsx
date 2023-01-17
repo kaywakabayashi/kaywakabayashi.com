@@ -28,13 +28,10 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <HeaderSection title="hello" />
-      </section>
-      <section>
-        <HeaderSection title="i am">
+        <HeaderSection title="hello">
           <h1 className=" leading-loose font-thin">
-            <span className="font-bold">Katsuya Wakabayashi</span>, a senior
-            student studying{" "}
+            I am <span className="font-bold">Katsuya Wakabayashi</span>, a
+            senior student studying{" "}
             <span className="font-bold">linguistics and computer science</span>{" "}
             at UCLA.
           </h1>
