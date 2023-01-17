@@ -33,7 +33,7 @@ export default function ProjectSection({
               height="480"
               className="group-hover:visible transition-opacity ease-in-out opacity-0 group-hover:opacity-20 delay-75 duration-200 z-0 absolute h-auto w-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             />
-            <div className="group-hover:visible mt-24 text-4xl mx-16 space-y-5 opacity-80">
+            <div className="group-hover:visible mt-24 sm:text-4xl mx-16 space-y-5 opacity-80">
               <p>{description}</p>
               <p>({stack})</p>
             </div>
