@@ -40,7 +40,7 @@ export default function Circle() {
           />
         </defs>
         <text x="0" y="0" textAnchor="middle" className=" fill-current text-xl">
-          <textPath href="#textPath" startOffset="50%" letterSpacing="24">
+          <textPath href="#textPath" startOffset="50%" letterSpacing="20">
             <tspan className="opacity-40">
               {" "}
               {date.toLocaleString("en-US", {

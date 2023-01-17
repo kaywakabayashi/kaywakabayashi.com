@@ -1,22 +1,30 @@
 import "../styles/Home.modules.scss";
-import { Amiri } from "@next/font/google";
+import {
+  Bitter as MainFont,
+  Moon_Dance as HandwritingFont,
+} from "@next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
 
 import HeaderSection from "./components/HeaderSection";
-const amiri = Amiri({ weight: "400" });
+const mainFont = MainFont({ weight: "400", subsets: ["latin"] });
+const handwritingFont = HandwritingFont({
+  weight: "400",
+  subsets: ["latin"],
+  fallback: ["system-ui", "arial"],
+});
 import ProjectSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main className={`${amiri.className} `}>
+    <main className={`${mainFont.className}`}>
       <section className="relative h-screen w-full flex justify-center items-center overflow-hidden">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] sm:w-[50rem] sm:h-[50rem]">
           <Circle />
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden text-6xl">
-          kw
+          <span className={handwritingFont.className}>kw</span>
         </div>
       </section>
       <section>
@@ -24,9 +32,11 @@ export default function Home() {
       </section>
       <section>
         <HeaderSection title="i am">
-          <h1 className=" leading-normal">
-            Katsuya Wakabayashi, a senior student studying inguistics and
-            computer science at UCLA.
+          <h1 className=" leading-loose font-thin">
+            <span className="font-bold">Katsuya Wakabayashi</span>, a senior
+            student studying{" "}
+            <span className="font-bold">linguistics and computer science</span>{" "}
+            at UCLA.
           </h1>
         </HeaderSection>
       </section>
