@@ -16,11 +16,10 @@ export default function ContactSection({
   resume: string;
 }) {
   return (
-    <div className="relative  h-screen text-center w-full">
-      <div className="absolute top-40 text-6xl sm:text-[13rem] font-bold w-full l-0">
-        {title}
-      </div>
-      <div className="absolute bottom-44 font-bold text-xl sm:text-5xl w-full l-0 space-y-10">
+    <div className="h-screen text-center w-full flex flex-col justify-evenly font-bold">
+      <div className="text-7xl sm:text-[13rem]">{title}</div>
+
+      <div className="text-3xl sm:text-5xl flex flex-col gap-10">
         <p>
           <Link href={`tel:${phone}`}>{phone}</Link>
         </p>
