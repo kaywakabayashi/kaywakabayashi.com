@@ -21,9 +21,6 @@ export default function ContactSection({
 
       <div className="text-3xl sm:text-5xl flex flex-col gap-10">
         <p>
-          <Link href={`tel:${phone}`}>{phone}</Link>
-        </p>
-        <p>
           <Link href={`mailto:${email}`}>{email}</Link>
         </p>
         <p>
