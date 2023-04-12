@@ -11,7 +11,7 @@ export default function HeaderSection({
         {title.length < 8 ? (
           <p className="sticky top-0 sm:text-[13rem] pt-8">{title}</p>
         ) : (
-          <p className="sticky top-0 sm:text-[8rem] lg:text-[13rem]  pt-8">
+          <p className="sticky top-0 sm:text-[6rem] lg:text-[11rem] xl:text-[13rem] pt-8">
             {title}
           </p>
         )}

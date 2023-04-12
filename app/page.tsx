@@ -2,16 +2,16 @@ import "../styles/Home.modules.scss";
 import {
   Bitter as MainFont,
   Moon_Dance as HandwritingFont,
+  Satisfy as HandwritingFont2,
+  Great_Vibes as HandwritingFont3,
 } from "@next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
 
 import HeaderSection from "./components/HeaderSection";
-const mainFont = MainFont({ weight: "400", subsets: ["latin"] });
-const handwritingFont = HandwritingFont({
-  weight: "400",
+const mainFont = MainFont({
+  weight: ["100", "400", "700"],
   subsets: ["latin"],
-  fallback: ["system-ui", "arial"],
 });
 import ProjectSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
@@ -23,17 +23,38 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] sm:w-[50rem] sm:h-[50rem]">
           <Circle />
         </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden text-6xl">
-          <span className={handwritingFont.className}>kw</span>
-        </div>
       </section>
       <section>
         <HeaderSection title="hello">
-          <h1 className=" leading-loose font-thin">
-            I am <span className="font-bold">Katsuya Wakabayashi</span>, a
-            senior student studying{" "}
-            <span className="font-bold">linguistics and computer science</span>{" "}
-            at UCLA.
+          <h1 className="leading-loose font-thin">
+            <p>I am</p>
+            <p>
+              <span className="font-bold">Katsuya Wakabayashi</span>,
+            </p>
+            <p>a senior student studying</p>
+            <p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://catalog.registrar.ucla.edu/major/2022/LinguisticsandComputerScienceBA"
+                className="hover:underline decoration-2 underline-offset-2"
+              >
+                <span className="font-bold">
+                  linguistics and computer science
+                </span>
+              </a>
+            </p>
+            <p>
+              at{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://catalog.registrar.ucla.edu/major/2022/LinguisticsandComputerScienceBA"
+                className="hover:underline decoration-2 underline-offset-2"
+              >
+                UCLA.
+              </a>
+            </p>
           </h1>
         </HeaderSection>
       </section>
@@ -76,7 +97,6 @@ export default function Home() {
       <section>
         <ContactSection
           title="let's talk?"
-          phone="+1 334-454-3210"
           email="wakabayashi@ucla.edu"
           linkedin="https://linkedin.com/in/katsuyawakabayashi"
           github="https://github.com/katsuyawakabayashi"

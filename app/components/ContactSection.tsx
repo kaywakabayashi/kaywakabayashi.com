@@ -2,14 +2,12 @@ import Link from "next/link";
 
 export default function ContactSection({
   title,
-  phone,
   email,
   linkedin,
   github,
   resume,
 }: {
   title: string;
-  phone: string;
   email: string;
   linkedin: string;
   github: string;
@@ -19,9 +17,14 @@ export default function ContactSection({
     <div className="h-screen text-center w-full flex flex-col justify-evenly font-bold">
       <div className="text-7xl sm:text-[13rem]">{title}</div>
 
-      <div className="text-3xl sm:text-5xl flex flex-col gap-10">
+      <div className="text-3xl sm:text-5xl flex flex-col gap-10 font-thin">
         <p>
-          <Link href={`mailto:${email}`}>{email}</Link>
+          <Link
+            href={`mailto:${email} `}
+            className="hover:underline underline-offset-2"
+          >
+            {email}
+          </Link>
         </p>
         <p>
           <Link className="hover:underline underline-offset-2" href={linkedin}>

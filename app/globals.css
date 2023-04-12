@@ -5,3 +5,7 @@
 a:visited {
   color: inherit;
 }
+
+#__next {
+  overflow-x: hidden;
+}
