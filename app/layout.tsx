@@ -1,5 +1,22 @@
+import { Metadata } from "next";
 import "./globals.css";
-import Providers from "./Providers";
+import { Bitter as MainFont } from "@next/font/google";
+
+const mainFont = MainFont({
+  weight: ["100", "400", "700"],
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Katsuya Wakabayashi",
+    template: "%s | Katsuya Wakabayashi",
+  },
+  description: "Linguistics and Computer Science Student at UCLA",
+  icons: {
+    shortcut: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -7,11 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="scroll-smooth ">
-      <head />
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+    <html
+      lang="en"
+      className={`${mainFont.className}, dark:text-white dark:bg-[#111010]`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,5 @@
 import "../styles/Home.modules.scss";
-import {
-  Bitter as MainFont,
-  Moon_Dance as HandwritingFont,
-  Satisfy as HandwritingFont2,
-  Great_Vibes as HandwritingFont3,
-} from "@next/font/google";
+import { Bitter as MainFont } from "@next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
 
@@ -18,7 +13,7 @@ import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main className={`${mainFont.className}`}>
+    <main className={`${mainFont.className} text-center`}>
       <section className="relative h-screen w-full flex justify-center items-center overflow-hidden">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] sm:w-[50rem] sm:h-[50rem]">
           <Circle />
@@ -26,7 +21,7 @@ export default function Home() {
       </section>
       <section>
         <HeaderSection title="hello">
-          <h1 className="leading-loose font-thin">
+          <h1 className="sm:leading-relaxed leading-loose font-thin">
             <p>I am</p>
             <p>
               <span className="font-bold">Katsuya Wakabayashi</span>,
@@ -75,7 +70,38 @@ export default function Home() {
           link="https://bruinwalk.com"
         />
       </section>
+      <section>
+        <HeaderSection title="learned" />
 
+        <h1 className="sm:text-xs md:text-2xl lg:text-4xl space-y-4 md:space-y-10 font-thin px-10">
+          <div className="group space-y-2">
+            <p className="opacity-30 group-hover:opacity-70">
+              Computer Science{" "}
+            </p>
+            <p className="opacity-10 group-hover:opacity-100 leading-relaxed">
+              Algorithm and Complexity, Formal Languages and Automata
+              Theory,Fundamentals of Artificial Intelligence, Program
+              Lanuguages, Data Structures, x86 Assembly, Software Construction
+              Laboratory
+            </p>
+          </div>
+          <div className="group space-y-2">
+            <p className="opacity-30 group-hover:opacity-70">Mathematics </p>
+            <p className="opacity-10 group-hover:opacity-100 leading-relaxed">
+              Linear Algebra, Differential Equations,Multivariable Calculus,
+              Discrete Structures, Probability, Linguistic Analysis
+            </p>
+          </div>
+          <div className="group space-y-2">
+            {" "}
+            <p className="opacity-30 group-hover:opacity-70">Linguistics </p>
+            <p className="opacity-10 group-hover:opacity-100 leading-relaxed">
+              Computational Linguistics, Syntax, Phonetics, Phonology, Syntactic
+              Typology
+            </p>
+          </div>
+        </h1>
+      </section>
       <section>
         <HeaderSection title="building" />
         <ProjectSection
