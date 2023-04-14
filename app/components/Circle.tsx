@@ -1,44 +1,45 @@
 "use client";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import "../../styles/Home.modules.scss";
 import {
   Bitter as MainFont,
   Moon_Dance as HandwritingFont,
-  Satisfy as HandwritingFont2,
-  Great_Vibes as HandwritingFont3,
 } from "@next/font/google";
 
 const handwritingFont = HandwritingFont({
   weight: "400",
   subsets: ["latin"],
-  fallback: ["HandwritingFont2", "HandwritingFont3", "MainFont", "system-ui"],
+  fallback: ["MainFont", "system-ui"],
 });
+
+const isBrowser = () => typeof window !== "undefined";
+
+export function scrollToTop() {
+  if (!isBrowser()) return;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+export function scrollToBottom() {
+  if (!isBrowser()) return;
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
 
 export default function Circle() {
   const [date, setDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
-  const { theme, setTheme } = useTheme();
+
   useEffect(() => {
     setDate(new Date());
     setLoading(false);
   }, []);
 
   if (loading) return null;
-  function toggleTheme() {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  }
 
   return (
-    <div onClick={() => toggleTheme()}>
+    <div>
       <div className="relative">
         <svg
           className="absolute"
-          // preserveAspectRatio="xMidYMin"
           style={{
             animation: "rotate 20s linear infinite",
           }}
@@ -58,8 +59,13 @@ export default function Circle() {
             textAnchor="middle"
             className="fill-current text-xl"
           >
-            <textPath href="#textPath" startOffset="50%" letterSpacing="19">
-              <tspan className="opacity-40">
+            <textPath
+              href="#textPath"
+              startOffset="50%"
+              letterSpacing="20"
+              className="opacity-40"
+            >
+              <tspan>
                 {" "}
                 {date.toLocaleString("en-US", {
                   timeZone: "America/Los_Angeles",
@@ -69,16 +75,20 @@ export default function Circle() {
                   month: "short",
                   day: "2-digit",
                 })}{" "}
-                - Los Angeles CA -{" "}
+                - Los Angeles CA -
               </tspan>
-
-              <tspan className="animate-pulse opacity-100 hover:cursor-pointer">
-                {theme == "light" ? "too light?" : "too dark?"}
+              <tspan
+                className="cursor-pointer"
+                onClick={() => {
+                  scrollToBottom();
+                }}
+              >
+                {" "}
+                CONTACT -{" "}
               </tspan>
             </textPath>
           </text>
         </svg>
-        <a href="#" onClick={() => toggleTheme()}></a>
       </div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden text-6xl">
         <span className={handwritingFont.className}>kw</span>

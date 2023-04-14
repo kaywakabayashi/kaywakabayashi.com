@@ -7,5 +7,5 @@ a:visited {
 }
 
 #__next {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
