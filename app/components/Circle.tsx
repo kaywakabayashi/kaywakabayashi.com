@@ -4,7 +4,7 @@ import "../../styles/Home.modules.scss";
 import {
   Bitter as MainFont,
   Moon_Dance as HandwritingFont,
-} from "@next/font/google";
+} from "next/font/google";
 
 const handwritingFont = HandwritingFont({
   weight: "400",

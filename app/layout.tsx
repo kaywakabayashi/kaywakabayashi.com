@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
-import { Bitter as MainFont } from "@next/font/google";
+import { Bitter as MainFont } from "next/font/google";
 
 const mainFont = MainFont({
   weight: ["100", "400", "700"],

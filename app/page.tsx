@@ -1,5 +1,5 @@
 import "../styles/Home.modules.scss";
-import { Bitter as MainFont } from "@next/font/google";
+import { Bitter as MainFont } from "next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
 
@@ -14,8 +14,8 @@ import ContactSection from "./components/ContactSection";
 export default function Home() {
   return (
     <main className={`${mainFont.className} text-center`}>
-      <section className="relative h-screen w-full flex justify-center items-center">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] sm:w-[50rem] sm:h-[50rem]">
+      <section className="relative h-screen w-full flex justify-center items-center overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] md:w-[50rem] md:h-[50rem]">
           <Circle />
         </div>
       </section>
