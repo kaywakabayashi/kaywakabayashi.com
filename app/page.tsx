@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <HeaderSection title="hello">
+        <HeaderSection title="hello!">
           <h1 className="sm:leading-relaxed leading-loose font-thin">
             <p>I am</p>
             <p>

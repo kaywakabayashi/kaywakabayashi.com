@@ -74,8 +74,8 @@ export default function Circle() {
                   hour: "numeric",
                   month: "short",
                   day: "2-digit",
-                })}{" "}
-                - Los Angeles CA -
+                })}{" "}|{" "}
+                 Los Angeles, CA {" "}|{" "}
               </tspan>
               <tspan
                 className="cursor-pointer"
@@ -84,7 +84,7 @@ export default function Circle() {
                 }}
               >
                 {" "}
-                CONTACT -{" "}
+                CONTACT {" "}|{" "}
               </tspan>
             </textPath>
           </text>
