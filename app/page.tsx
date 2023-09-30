@@ -126,7 +126,7 @@ export default function Home() {
           email="wakabayashi@ucla.edu"
           linkedin="https://linkedin.com/in/katsuyawakabayashi"
           github="https://github.com/katsuyawakabayashi"
-          resume="https://ucla.app.box.com/v/katsuyawakabayashi"
+          resume="https://drive.google.com/file/d/1kejbzz4iv0b0CYEVbQ6HrBIh9xGu-ezl/view?usp=sharing"
         />
       </section>
 
