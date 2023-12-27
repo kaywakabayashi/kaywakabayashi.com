@@ -26,35 +26,21 @@ export default function Home() {
             <p>
               <span className="font-bold">Katsuya Wakabayashi</span>,
             </p>
-            <p>a senior student studying</p>
-            <p>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://catalog.registrar.ucla.edu/major/2022/LinguisticsandComputerScienceBA"
-                className="hover:underline decoration-2 underline-offset-2"
-              >
-                <span className="font-bold">
-                  linguistics and computer science
-                </span>
-              </a>
-            </p>
-            <p>
-              at{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://catalog.registrar.ucla.edu/major/2022/LinguisticsandComputerScienceBA"
-                className="hover:underline decoration-2 underline-offset-2"
-              >
-                UCLA.
-              </a>
-            </p>
+            <p>a graduate of <span className="font-bold">UCLA</span>, majored in Linguistics and Computer Science</p>
+            
+            <p>and currently, a software engineer based in <span className="font-bold">Houston, TX</span>.</p>
           </h1>
         </HeaderSection>
       </section>
       <section>
         <HeaderSection title="experienced" />
+        <ProjectSection
+          title="Software Engineer at Daikin Comfort"
+          image="daikinone"
+          description="Daikin One"
+          stack="React Native / TypeScript / AWS"
+          link="https://daikinone.com"
+        />
         <ProjectSection
           title="Software Engineer Intern at Intel Corporation"
           image="intelevo"

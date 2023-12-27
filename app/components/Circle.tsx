@@ -68,14 +68,14 @@ export default function Circle() {
               <tspan>
                 {" "}
                 {date.toLocaleString("en-US", {
-                  timeZone: "America/Los_Angeles",
+                  timeZone: "America/Chicago",
                   timeZoneName: "short",
                   weekday: "short",
                   hour: "numeric",
                   month: "short",
                   day: "2-digit",
                 })}{" "}|{" "}
-                 Los Angeles, CA {" "}|{" "}
+                 Houston, TX {" "}|{" "}
               </tspan>
               <tspan
                 className="cursor-pointer"
