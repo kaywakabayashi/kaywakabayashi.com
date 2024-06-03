@@ -2,43 +2,54 @@ import "../styles/Home.modules.scss";
 import { Bitter as MainFont } from "next/font/google";
 import Footer from "./components/Footer";
 import Circle from "./components/Circle";
+import HeadlineSection from "./components/HeadlineSection";
+import ProjectSection from "./components/ProjectSection";
+import ContactSection from "./components/ContactSection";
+import {
+  FIRST_NAME,
+  FULL_NAME,
+  POSITION,
+  SCHOOL,
+  MAJOR,
+  LOCATION,
+  EMAIL,
+  RESUME_LINK,
+  LINKEDIN_LINK,
+  GITHUB_LINK,
+} from "./constants";
 
-import HeaderSection from "./components/HeaderSection";
 const mainFont = MainFont({
   weight: ["100", "400", "700"],
   subsets: ["latin"],
 });
-import ProjectSection from "./components/ProjectSection";
-import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main className={`${mainFont.className} text-center`}>
+    <main className={`${mainFont.className} text-center px-5`}>
       <section className="relative h-screen w-full flex justify-center items-center overflow-hidden">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] md:w-[50rem] md:h-[50rem]">
           <Circle />
         </div>
       </section>
       <section>
-        <HeaderSection title="hello!">
-          <h1 className="sm:leading-relaxed leading-loose font-thin">
-            <p>I am</p>
-            <p>
-              <span className="font-bold">Katsuya Wakabayashi</span>,
-            </p>
-            <p>a graduate of <span className="font-bold">UCLA</span>, majored in Linguistics and Computer Science</p>
-            
-            <p>and currently, a software engineer based in <span className="font-bold">Houston, TX</span>.</p>
-          </h1>
-        </HeaderSection>
+        <HeadlineSection title="hello!" />
+        <h1 className="text-3xl sm:text-6xl md:text-7xl h-screen flex flex-col justify-center gap-6 items-center font-thin">
+          <p className="leading-loose">
+            I am <span className="font-bold">{FULL_NAME}</span>, a{" "}
+            <span className="font-bold">{POSITION}</span> in{" "}
+            <span className="font-bold">{LOCATION}</span>, a graduate of{" "}
+            <span className="font-bold">{SCHOOL} </span>
+            <span className="leading-snug">with BA in {MAJOR}.</span>
+          </p>
+        </h1>
       </section>
       <section>
-        <HeaderSection title="experienced" />
+        <HeadlineSection title="worked" />
         <ProjectSection
           title="Software Engineer at Daikin Comfort"
           image="daikinone"
-          description="Daikin One"
-          stack="React Native / TypeScript / AWS"
+          description="Daikin One Team"
+          stack="React Native / TypeScript / Python / AWS"
           link="https://daikinone.com"
         />
         <ProjectSection
@@ -52,22 +63,21 @@ export default function Home() {
           title="Full-Stack Developer at Bruinwalk.com"
           image="bruinwalk"
           description="UCLA #1 Course & Apartment Review Website"
-          stack="Django / Docker / GitHub Actions / DigitlOcean"
+          stack="Django / Docker / GitHub Actions / DigitalOcean"
           link="https://bruinwalk.com"
         />
       </section>
       <section>
-        <HeaderSection title="learned" />
-        <h1 className="sm:text-xs md:text-2xl lg:text-4xl space-y-4 md:space-y-10 font-thin px-10">
+        <HeadlineSection title="studied" />
+        <div className="sm:text-xs md:text-2xl lg:text-4xl space-y-4 md:space-y-10 font-thin">
           <div className="group space-y-2">
             <p className="opacity-30 group-hover:opacity-70">
-              Computer Science{" "}
+              Computer Science
             </p>
             <p className="opacity-10 group-hover:opacity-100 leading-relaxed">
-              Algorithm and Complexity, Formal Languages and Automata
-              Theory,Fundamentals of Artificial Intelligence, Program
-              Lanuguages, Software Construction Laboratory, Data Structures, x86
-              Assembly,
+              Algorithm and Complexity, Formal Languages and Automata Theory,
+              Fundamentals of Artificial Intelligence, Program Languages,
+              Software Construction Laboratory, Data Structures, x86 Assembly,
             </p>
           </div>
           <div className="group space-y-2">
@@ -78,18 +88,17 @@ export default function Home() {
             </p>
           </div>
           <div className="group space-y-2">
-            {" "}
             <p className="opacity-30 group-hover:opacity-70">Linguistics</p>
             <p className="opacity-10 group-hover:opacity-100 leading-relaxed">
               Computational Linguistics, Syntax, Phonetics, Phonology, Phonology
-              II Syntactic Typology, Linguistic Analysis, Current Methods of
+              II, Syntactic Typology, Linguistic Analysis, Current Methods of
               Language Teaching
             </p>
           </div>
-        </h1>
+        </div>
       </section>
       <section>
-        <HeaderSection title="building" />
+        <HeadlineSection title="building" />
         <ProjectSection
           title="Eternal Card"
           image="eternalcard"
@@ -105,17 +114,15 @@ export default function Home() {
           link="https://efficiently.app"
         />
       </section>
-
       <section>
         <ContactSection
           title="let's talk?"
-          email="wakabayashi@ucla.edu"
-          linkedin="https://linkedin.com/in/katsuyawakabayashi"
-          github="https://github.com/katsuyawakabayashi"
-          resume="https://drive.google.com/file/d/1kejbzz4iv0b0CYEVbQ6HrBIh9xGu-ezl/view?usp=sharing"
+          email={EMAIL}
+          linkedin={LINKEDIN_LINK}
+          github={GITHUB_LINK}
+          resume={RESUME_LINK}
         />
       </section>
-
       <Footer />
     </main>
   );

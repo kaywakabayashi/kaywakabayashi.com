@@ -15,12 +15,14 @@ export default function ContactSection({
 }) {
   return (
     <div className="h-screen text-center w-full flex flex-col justify-evenly font-bold">
-      <div className="text-7xl sm:text-[13rem]">{title}</div>
+      <div className="text-7xl xs:text-[8rem] sm:text-[10rem] md:text-[13rem]">
+        {title}
+      </div>
 
-      <div className="text-3xl sm:text-5xl flex flex-col gap-10 font-thin">
+      <div className="text-2xl xs:text-4xl sm:text-5xl flex flex-col gap-10 font-thin">
         <p>
           <Link
-            href={`mailto:${email} `}
+            href={`mailto:${email}`}
             className="hover:underline underline-offset-2"
           >
             {email}

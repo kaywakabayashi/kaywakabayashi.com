@@ -5,6 +5,7 @@ import {
   Bitter as MainFont,
   Moon_Dance as HandwritingFont,
 } from "next/font/google";
+import { LOCATION } from "../constants";
 
 const handwritingFont = HandwritingFont({
   weight: "400",
@@ -14,15 +15,11 @@ const handwritingFont = HandwritingFont({
 
 const isBrowser = () => typeof window !== "undefined";
 
-export function scrollToTop() {
-  if (!isBrowser()) return;
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-export function scrollToBottom() {
-  if (!isBrowser()) return;
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-}
+const scrollToBottom = () => {
+  if (isBrowser()) {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  }
+};
 
 export default function Circle() {
   const [date, setDate] = useState(new Date());
@@ -74,8 +71,8 @@ export default function Circle() {
                   hour: "numeric",
                   month: "short",
                   day: "2-digit",
-                })}{" "}|{" "}
-                 Houston, TX {" "}|{" "}
+                })}{" "}
+                | {LOCATION} |{" "}
               </tspan>
               <tspan
                 className="cursor-pointer"
@@ -83,8 +80,7 @@ export default function Circle() {
                   scrollToBottom();
                 }}
               >
-                {" "}
-                CONTACT {" "}|{" "}
+                Contact{" "}
               </tspan>
             </textPath>
           </text>

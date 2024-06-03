@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { Bitter as MainFont } from "next/font/google";
+import { FULL_NAME } from "./constants";
 
 const mainFont = MainFont({
   weight: ["100", "400", "700"],
@@ -9,10 +10,9 @@ const mainFont = MainFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Katsuya Wakabayashi",
-    template: "%s | Katsuya Wakabayashi",
+    default: FULL_NAME,
+    template: `%s | ${FULL_NAME}`,
   },
-  description: "Linguistics and Computer Science Student at UCLA",
   icons: {
     shortcut: "/favicon.ico",
   },
