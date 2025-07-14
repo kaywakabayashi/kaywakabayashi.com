@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface ProjectSectionProps {
   title: string;
   image: string;
@@ -28,13 +26,6 @@ export default function ProjectSection({
             {title}
           </h2>
           <div className="xs:visible sm:invisible">
-            <Image
-              alt={`${image} image`}
-              src={`/${image}.png`}
-              width="480"
-              height="480"
-              className="group-hover:visible transition-opacity ease-in-out opacity-10 sm:opacity-0 group-hover:opacity-10 delay-75 duration-200 z-0 absolute h-auto w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            />
             <div className="group-hover:visible mt-24 sm:text-4xl mx-16 space-y-5 opacity-80 font-thin">
               <p>{description}</p>
               {stack && <p>{stack}</p>}

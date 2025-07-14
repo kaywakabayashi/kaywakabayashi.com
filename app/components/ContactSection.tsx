@@ -25,7 +25,7 @@ export default function ContactSection({
             href={`mailto:${email}`}
             className="hover:underline underline-offset-2"
           >
-            {email}
+            Email
           </Link>
         </p>
         <p>

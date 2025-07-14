@@ -4,7 +4,7 @@ export default function Footer() {
   let year = d.getFullYear();
   return (
     <footer className="text-center sm:text-3xl p-5">
-      &copy;{year} KAYWAKABAYASHI.COM
+      &copy;{year} WAKABAYASHI.COM
     </footer>
   );
 }
