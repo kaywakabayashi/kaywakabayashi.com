@@ -15,24 +15,17 @@ export default function ProjectSection({
 }: ProjectSectionProps) {
   return (
     <div>
-      <a
-        target="_blank"
-        href={link}
-        rel="noopener noreferrer"
-        className="z-50 relative"
-      >
-        <div className="h-screen flex flex-col justify-center items-center relative font-bold leading-normal group text-center">
-          <h2 className="py-10 text-3xl sm:text-6xl leading-loostext-center">
-            {title}
-          </h2>
-          <div className="xs:visible sm:invisible">
-            <div className="group-hover:visible mt-24 sm:text-4xl mx-16 space-y-5 opacity-80 font-thin">
-              <p>{description}</p>
-              {stack && <p>{stack}</p>}
-            </div>
+      <div className="h-screen flex flex-col justify-center items-center relative font-bold leading-normal group text-center">
+        <h2 className="py-10 text-3xl sm:text-6xl leading-loostext-center">
+          {title}
+        </h2>
+        <div className="xs:visible sm:invisible">
+          <div className="group-hover:visible mt-24 sm:text-4xl mx-16 space-y-5 opacity-80 font-thin">
+            <p>{description}</p>
+            {stack && <p>{stack}</p>}
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }

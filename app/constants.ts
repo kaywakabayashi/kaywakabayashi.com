@@ -7,6 +7,4 @@ export const POSITION = "Software Engineer";
 export const LOCATION = "Houston, TX";
 
 export const EMAIL = "wakabayashi@ucla.edu";
-export const RESUME_LINK = `${FULL_URL}/resume`;
 export const LINKEDIN_LINK = `${FULL_URL}/linkedin`;
-export const GITHUB_LINK = `${FULL_URL}/github`;

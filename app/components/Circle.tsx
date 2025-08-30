@@ -13,13 +13,6 @@ const handwritingFont = HandwritingFont({
   fallback: ["MainFont", "system-ui"],
 });
 
-const isBrowser = () => typeof window !== "undefined";
-
-const scrollToBottom = () => {
-  if (isBrowser()) {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-  }
-};
 
 export default function Circle() {
   const [date, setDate] = useState(new Date());
@@ -74,12 +67,7 @@ export default function Circle() {
                 })}{" "}
                 | {LOCATION} |{" "}
               </tspan>
-              <tspan
-                className="cursor-pointer"
-                onClick={() => {
-                  scrollToBottom();
-                }}
-              >
+              <tspan>
                 Contact{" "}
               </tspan>
             </textPath>

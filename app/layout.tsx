@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
+import "../styles/source-sans-pro.css";
 import { Bitter as MainFont } from "next/font/google";
 import { FULL_NAME } from "./constants";
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mainFont.className}, dark:text-white dark:bg-[#111010]`}
+      className={`${mainFont.className} dark:text-white dark:bg-[#111010]`}
     >
       <body>{children}</body>
     </html>

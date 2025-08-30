@@ -1,7 +1,6 @@
 "use client";
 
 import { memo, useMemo, useEffect, useState, useCallback } from "react";
-import Link from "next/link";
 import Footer from "../components/Footer";
 import Circle from "../components/Circle";
 import ProjectSection from "../components/ProjectSection";
@@ -11,10 +10,6 @@ import {
   SCHOOL,
   MAJOR,
   LOCATION,
-  EMAIL,
-  RESUME_LINK,
-  LINKEDIN_LINK,
-  GITHUB_LINK,
 } from "../constants";
 
 interface ScrollModeProps {
@@ -49,12 +44,6 @@ interface AnimatedContainerProps {
   variant?: "default" | "compact";
 }
 
-interface ContactLinkProps {
-  href: string;
-  children: React.ReactNode;
-  glowColor?: string;
-  gradient?: string;
-}
 
 interface SectionContainerProps {
   items: ReadonlyArray<{
@@ -132,26 +121,6 @@ const WORK_EXPERIENCE: readonly WorkExperience[] = [
   },
 ] as const;
 
-const CONTACT_LINKS = [
-  {
-    href: LINKEDIN_LINK,
-    label: "LinkedIn",
-    glowColor: "#0ea5e9",
-    gradient: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    href: GITHUB_LINK,
-    label: "GitHub",
-    glowColor: "#a78bfa",
-    gradient: "from-purple-500/20 to-indigo-500/20",
-  },
-  {
-    href: RESUME_LINK,
-    label: "Resume",
-    glowColor: "#f59e0b",
-    gradient: "from-orange-500/20 to-yellow-500/20",
-  },
-] as const;
 
 const useScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -405,51 +374,7 @@ const AnimatedContainer = memo<AnimatedContainerProps>(
 );
 AnimatedContainer.displayName = "AnimatedContainer";
 
-const ContactLink = memo<ContactLinkProps>(
-  ({
-    href,
-    children,
-    glowColor = "#60a5fa",
-    gradient = "from-blue-500/20 to-purple-500/20",
-  }) => {
-    const [isHovered, setIsHovered] = useState(false);
 
-    const textStyle = useMemo(
-      () => ({
-        color: isHovered ? glowColor : undefined,
-        textShadow: isHovered
-          ? `0 0 20px ${glowColor}80, 0 0 40px ${glowColor}40`
-          : undefined,
-      }),
-      [isHovered, glowColor]
-    );
-
-    return (
-      <Link
-        href={href}
-        className="group relative overflow-hidden rounded-xl p-6 transition-all duration-700 hover:scale-[1.02] block"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div
-          className={`absolute inset-0 bg-gradient-to-r ${gradient} transition-all duration-500 opacity-0 group-hover:opacity-100`}
-        />
-        <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-500" />
-
-        <div className="relative z-10">
-          <span
-            className="text-2xl xs:text-4xl sm:text-5xl font-thin text-white/80 group-hover:text-white transition-all duration-500"
-            style={textStyle}
-          >
-            {children}
-          </span>
-        </div>
-      </Link>
-    );
-  }
-);
-
-ContactLink.displayName = "ContactLink";
 
 const SectionContainer = memo<SectionContainerProps>(
   ({
@@ -705,25 +630,44 @@ const ScrollMode: React.FC<ScrollModeProps> = ({ mainFont }) => {
               }`}
             >
               <div className="space-y-6">
-                <ContactLink
-                  href={`mailto:${EMAIL}`}
-                  glowColor="#10b981"
-                  gradient="from-green-500/20 to-teal-500/20"
-                >
-                  Email
-                </ContactLink>
+                <div className="group relative overflow-hidden rounded-xl p-6 transition-all duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                  <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-500" />
+                  <div className="relative z-10">
+                    <span className="text-2xl xs:text-4xl sm:text-5xl font-thin text-white/80 group-hover:text-white transition-all duration-500">
+                      Email
+                    </span>
+                  </div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {CONTACT_LINKS.map(({ href, label, glowColor, gradient }) => (
-                    <ContactLink
-                      key={label}
-                      href={href}
-                      glowColor={glowColor}
-                      gradient={gradient}
-                    >
-                      {label}
-                    </ContactLink>
-                  ))}
+                  <div className="group relative overflow-hidden rounded-xl p-6 transition-all duration-700">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-500" />
+                    <div className="relative z-10">
+                      <span className="text-2xl xs:text-4xl sm:text-5xl font-thin text-white/80 group-hover:text-white transition-all duration-500">
+                        LinkedIn
+                      </span>
+                    </div>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl p-6 transition-all duration-700">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-500" />
+                    <div className="relative z-10">
+                      <span className="text-2xl xs:text-4xl sm:text-5xl font-thin text-white/80 group-hover:text-white transition-all duration-500">
+                        GitHub
+                      </span>
+                    </div>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl p-6 transition-all duration-700">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-500" />
+                    <div className="relative z-10">
+                      <span className="text-2xl xs:text-4xl sm:text-5xl font-thin text-white/80 group-hover:text-white transition-all duration-500">
+                        Resume
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

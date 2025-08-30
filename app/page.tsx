@@ -66,7 +66,7 @@ export default function Home() {
     <div key={currentMode}>
       {/* Render the appropriate mode */}
       {currentMode === "minimal" ? (
-        <MinimalMode mainFont={mainFont} />
+        <MinimalMode />
       ) : (
         <ScrollMode mainFont={mainFont} />
       )}
@@ -76,12 +76,6 @@ export default function Home() {
         className="fixed top-0 right-0 w-8 h-8 z-50 cursor-pointer"
         title="Switch mode"
       />
-      <div
-        className="fixed bottom-4 left-4 z-50 text-xs text-gray-400 opacity-50"
-        onClick={switchMode}
-      >
-        Press M or click
-      </div>
     </div>
   );
 }
